@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="body">
+
+        <div class="header">
+            <span class="title-fa">ورود</span>
+            <span class="title-en">Login</span>
+        </div>
+
+        <div class="content">
+
+            <div class="input-div">
+                <label for="username" class="username-label">نام کاربری</label>
+                <input class="username" id="username" type="text">
+            </div>
+            <div class="input-div">
+                <label for="password" class="pass-label">رمز مورد نظر</label>
+                <input class="password" id="password" type="password">    
+            </div>
+            
+            @if(isVisible){
+            <span (click)="showPassword()" class="show material-symbols-rounded">
+                visibility
+            </span>
+            }@else {
+            <span (click)="showPassword()" class="hide material-symbols-rounded absolute left-3 bottom-14">
+                visibility_off
+            </span>
+            }
+
+            <div class="forget-and-remember-div">
+                <span class="forget-pass">رمز عبورم را فراموش کردم</span>
+                <span class="remember-me"><input class="checkbox" type="checkbox">مرا به خاطر بسپار</span>
+            </div>
+        </div>
+
+        <div class="button">
+            <button class="login-btn">ورود</button>
+        </div>
+
+    </div>
+</div>

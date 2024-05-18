@@ -1,0 +1,78 @@
+:host {
+    @apply flex justify-center items-center h-full bg-blue-600;
+}
+
+.container {
+    @apply flex flex-col justify-center items-center max-w-xl w-full h-2/3 bg-white rounded-3xl;
+}
+
+.body {
+    @apply flex flex-col justify-between items-center w-2/3 h-2/3;
+}
+
+.header {
+    @apply flex flex-col items-center mt-4 text-blue-500;
+}
+
+.title-fa {
+    @apply text-4xl;
+}
+
+.title-en {
+    @apply text-2xl;
+}
+
+.content {
+    @apply flex flex-col gap-4 w-full relative;
+}
+
+.input-div {
+    @apply flex flex-col;
+
+    .username-label {
+        @apply absolute top-3 right-2 text-gray-400 pointer-events-none transition duration-500 px-2 text-base;
+    }
+
+    .pass-label {
+        @apply absolute top-20 right-2 text-gray-400 pointer-events-none transition duration-500 px-2 text-base;
+    }
+}
+
+.username {
+    @apply p-3 rounded-lg outline-none border-2 border-blue-500;
+}
+
+.password {
+    @apply p-3 border-2 border-blue-500 outline-none rounded-lg;
+}
+
+.forget-and-remember-div {
+    @apply flex justify-between items-center w-full text-blue-500;
+}
+
+.forget-pass {
+    @apply cursor-pointer text-lg;
+}
+
+.remember-me {
+    @apply flex flex-row-reverse gap-2 cursor-pointer text-lg;
+}
+
+.button {
+    @apply w-full text-xl;
+}
+
+.login-btn {
+    @apply bg-blue-500 w-full p-2 text-white rounded-lg;
+}
+
+.show,.hide {
+    @apply absolute left-3 bottom-14;
+}
+
+.input-div:focus-within label,
+.input-div input:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.95);
+  background-color: white;
+  @apply text-blue-500;
+}
