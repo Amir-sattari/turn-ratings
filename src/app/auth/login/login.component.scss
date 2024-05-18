@@ -28,14 +28,14 @@
 
 .input-div {
     @apply flex flex-col;
+}
 
-    .username-label {
-        @apply absolute top-3 right-2 text-gray-400 pointer-events-none transition duration-500 px-2 text-base;
-    }
+.username-label {
+    @apply absolute top-3 right-2 text-gray-400 pointer-events-none transition duration-500 px-2 text-base;
+}
 
-    .pass-label {
-        @apply absolute top-20 right-2 text-gray-400 pointer-events-none transition duration-500 px-2 text-base;
-    }
+.pass-label {
+    @apply absolute top-20 right-2 text-gray-400 pointer-events-none transition duration-500 px-2 text-base;
 }
 
 .username {
@@ -71,8 +71,7 @@
 }
 
 .input-div:focus-within label,
-.input-div input:not(:placeholder-shown) + label {
+.input-div input:not(:placeholder-shown) + label, .active-input {
   transform: translateY(-1.5rem) scale(0.95);
   background-color: white;
-  @apply text-blue-500;
 }

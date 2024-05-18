@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild, viewChild } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +7,12 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
-  isVisible: boolean = false;
 
-  public showPassword()
-  {
+  isVisible: boolean = false;
+  type: 'text' | 'password' = 'password'
+
+  public showPassword() {
     this.isVisible = this.isVisible === true ? false : true;
+    this.type = this.type == 'text' ? 'password' : 'text';
   }
 }
