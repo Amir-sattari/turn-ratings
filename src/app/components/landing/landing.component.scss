@@ -1,0 +1,19 @@
+:host {
+    @apply flex justify-center items-center h-full;
+}
+
+.container {
+    @apply flex justify-center items-center max-w-full w-full h-3/4 ;
+}
+
+.start-section {
+    @apply flex justify-between items-center max-w-7xl w-full;
+}
+
+.button-div {
+    @apply flex justify-center w-1/2;
+}
+
+button {
+    @apply bg-sky-500 text-white text-xl w-3/12 p-2 rounded-xl;
+}
