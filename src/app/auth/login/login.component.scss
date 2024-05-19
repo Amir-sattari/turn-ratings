@@ -74,3 +74,22 @@
 .remember-me {
   @apply flex flex-row-reverse gap-2 cursor-pointer text-lg;
 }
+
+.button {
+    @apply w-full text-xl;
+}
+
+.login-btn {
+    @apply bg-blue-500 w-full p-2 text-white rounded-lg;
+}
+
+.show,.hide {
+    @apply absolute left-3 bottom-14;
+}
+
+.input-div:focus-within label,
+.input-div input:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.95);
+  background-color: white;
+  @apply text-blue-500;
+}

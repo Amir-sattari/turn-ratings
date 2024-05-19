@@ -8,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   phoneNumber: string = ''; 
   username: string = ''; 
+  isVisible: boolean = false;
+  type: 'text' | 'password' = 'password'
+  
   ngOnInit(): void {
   }
-  isVisible: boolean = false;
 
   public showPassword()
   {
     this.isVisible = this.isVisible === true ? false : true;
+    this.type = this.type == 'text' ? 'password' : 'text';
   }
 }
