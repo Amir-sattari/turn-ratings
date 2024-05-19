@@ -1,0 +1,65 @@
+.body-container {
+    @apply h-screen bg-blue-600 flex justify-center items-center shadow-2xl;
+    font-family: morabba;
+    direction: rtl;
+  }
+  
+  .container {
+    @apply flex justify-center items-center flex-col rounded-3xl bg-white max-w-2xl;
+    height: 600px;
+    width: 615px;
+  }
+  
+  .logo {
+    @apply flex items-center justify-center text-center bg-blue-600 rounded-full w-36 h-36 text-5xl text-white;
+    font-weight: 400;
+    margin-top: -38rem;
+  }
+  
+  .inputs {
+    @apply flex flex-col gap-5 mt-16;
+  }
+  
+  // ...........................inputs((fullname-phone-birth-day))...........................
+  
+  .input {
+    @apply block w-72 h-12 bg-white focus:outline-none border-2 border-gray-300 rounded-xl py-3 px-3 block appearance-none leading-normal focus:border-blue-600 text-lg;
+  }
+  
+  .lable {
+    @apply absolute top-3 right-0 text-gray-400 pointer-events-none transition duration-500 px-2 text-base;
+  }
+  
+  // ...........................inputs((fullname-phone-birth-day))...........................
+  
+  .btn-next {
+    @apply bg-blue-600 border-none text-2xl text-white rounded-3xl w-56 h-16 cursor-pointer mt-16;
+  }
+  
+  .float-label-input:focus-within label,
+  .float-label-input input:not(:placeholder-shown) + label {
+    transform: translateY(-1.5rem) scale(0.95);
+    background-color: white;
+  }
+  
+  @media screen and (max-width: 612px) {
+    .container {
+      @apply flex justify-center items-center flex-col w-full bg-white max-w-2xl mr-0 fixed bottom-0;
+      border-radius: 111px 111px 0px 0px;
+      height: 35rem;
+    }
+  
+    .inputs {
+      @apply mt-40;
+    }
+  
+    .logo {
+      margin-top: -584px; 
+      width: 11rem;
+      height: 11rem;
+    }
+  
+    .btn-next{
+      @apply mt-20;
+    }
+  }  

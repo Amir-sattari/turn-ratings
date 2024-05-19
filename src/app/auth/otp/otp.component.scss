@@ -1,5 +1,6 @@
+
 .body-container {
-  @apply h-screen bg-blue-600 flex justify-center items-center shadow-2xl;
+  @apply h-screen  bg-blue-600 flex justify-center items-center shadow-2xl;
   font-family: morabba;
   direction: rtl;
 }
@@ -11,19 +12,19 @@
 }
 
 .logo {
-  @apply flex items-center justify-center text-center bg-blue-600 rounded-full w-36 h-36 text-5xl text-white;
+  @apply flex items-center justify-center text-center  bg-blue-600 rounded-full w-36 h-36 text-5xl text-white;
   font-weight: 400;
   margin-top: -38rem;
 }
 
 .inputs {
-  @apply flex flex-col gap-5 mt-16;
+  @apply flex flex-col gap-5 mt-8;
 }
 
 // ...........................inputs((fullname-phone-birth-day))...........................
 
 .input {
-  @apply block w-72 h-12 bg-white focus:outline-none border-2 border-gray-300 rounded-xl py-3 px-3 block appearance-none leading-normal focus:border-blue-600 text-lg;
+  @apply block w-80 h-12 bg-white focus:outline-none border-2 border-gray-300 rounded-xl py-3 px-3 block appearance-none leading-normal focus:border-blue-600 text-lg;
 }
 
 .lable {
@@ -33,7 +34,7 @@
 // ...........................inputs((fullname-phone-birth-day))...........................
 
 .btn-next {
-  @apply bg-blue-600 border-none text-2xl text-white rounded-3xl w-56 h-16 cursor-pointer mt-16;
+  @apply  bg-blue-600 border-none text-2xl text-white rounded-3xl w-56 h-16 cursor-pointer mt-16;
 }
 
 .float-label-input:focus-within label,
@@ -54,23 +55,12 @@
   }
 
   .logo {
-    margin-top: -584px;
+    margin-top: -584px; 
     width: 11rem;
     height: 11rem;
   }
-  
-  .btn-next {
-    margin-top: -100px;
+
+  .btn-next{
+    @apply mt-20;
   }
-}
-.forget-and-remember-div {
-  @apply flex justify-between items-center w-full text-blue-500;
-}
-
-.forget-pass {
-  @apply cursor-pointer text-base;
-}
-
-.remember-me {
-  @apply flex flex-row-reverse gap-2 cursor-pointer text-lg;
 }
