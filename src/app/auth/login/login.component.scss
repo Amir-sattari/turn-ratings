@@ -86,10 +86,3 @@
 .show,.hide {
     @apply absolute left-3 bottom-14;
 }
-
-.input-div:focus-within label,
-.input-div input:not(:placeholder-shown) + label {
-  transform: translateY(-1.5rem) scale(0.95);
-  background-color: white;
-  @apply text-blue-500;
-}
