@@ -3,15 +3,22 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
+import { OtpComponent } from './otp/otp.component';
+import { OtpLoginComponent } from './otp-login/otp-login.component';
+import { FormsModule } from '@angular/forms'; 
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    OtpComponent,
+    OtpLoginComponent
+
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
+    FormsModule
   ]
 })
 export class AuthModule { }
