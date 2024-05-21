@@ -20,8 +20,8 @@
           <label for="user-name" class="lable">نام کاربری</label>
         </div>
         <div class="relative float-label-input">
-            <input type="tel" id="phone-number" placeholder="" class="input" [(ngModel)]="phoneNumber" name="phoneNumber" required pattern="[0-9]*" minlength="11" maxlength="11" #phoneNumberInput="ngModel" />
-            <label for="phone-number" class="lable">شماره همراه</label>
+            <input type="tel" id="phone-number" placeholder="" class="input" [(ngModel)]="phoneNumber" name="phoneNumber" required pattern="[0-9]*" minlength="8" maxlength="8" #phoneNumberInput="ngModel" />
+            <label for="phone-number" class="lable">رمز عبور</label>
             <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.touched)" class="text-red-500"> این فیلد شامل عدد میباشد </div>
           </div>
         <div class="forget-and-remember-div">
@@ -35,7 +35,7 @@
       <br />
   
       <div class="flex">
-        <button [disabled]="phoneNumberInput.invalid" class="btn-next" routerLink="/auth/otp">ورود</button>
+        <button [disabled]="phoneNumberInput.invalid" class="btn-next" routerLink="">ورود</button>
       </div>
       
     </div>
