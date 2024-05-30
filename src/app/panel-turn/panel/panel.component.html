@@ -1,0 +1,66 @@
+<div class="flex h-full">
+
+    <div *ngIf="showSidebar" class="flex flex-col w-full gap-3 p-3 rounded-tl-xl rounded-bl-xl sidebar"
+        style="width: 232px;
+        height: 100%;
+        position: static; background-color: #009CFF;">
+
+        <div class="flex  h-full">
+
+            <div class="flex flex-col w-full p-3 rounded-tl-xl rounded-bl-xl sidebar gap-7 "
+                style="width: 230px; background-color: #009CFF;">
+
+                <img class="w-28 h-auto" src="../../../assets/images/logo.png">
+
+                <button routerLink="/doctor/search" class="w-fit">
+                    <!-- <span class="material-symbols-rounded opacity-50">
+                        search
+                    </span> -->
+                    <span class="w-1"></span>
+                    پروفایل
+                </button>
+
+                <button routerLink="/doctor/search" class="w-fit">
+                    <!-- <span class="material-symbols-rounded opacity-50">
+                        search
+                    </span> -->
+                    <span class="w-1"></span>
+                    تراکنش ها
+                </button>
+
+                <button routerLink="/doctor/search" class="w-fit">
+                    <!-- <span class="material-symbols-rounded opacity-50">
+                        search
+                    </span> -->
+                    <span class="w-1"></span>
+                    ویزیت های انجام شده
+                </button>
+
+                
+
+                <div class="flex-1"></div>
+
+                <button class="w-fit" (click)="logout()">
+                    <span class="material-symbols-rounded opacity-50">
+                        logout
+                    </span>
+                    <span class="w-1"></span>
+                    خروج
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-1 overflow-auto" (click)="hideSidebarOnClickOutside()">
+        <router-outlet></router-outlet>
+    </div>
+
+
+    <div *ngIf="!showSidebar" class="fixed right-1 show-sidebar-button m-2 " (click)="toggleSidebar()">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+
+</div>
