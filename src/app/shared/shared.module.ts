@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { TButtonComponent } from './components/t-button/t-button.component';
 import { TInputComponent } from './components/t-input/t-input.component';
-
-
-import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
-import { ButtonModule } from 'primeng/button';
+
+
+// import { CalendarModule } from 'primeng/calendar';
+// import { FormsModule } from '@angular/forms';
+// import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -20,13 +21,14 @@ import { ButtonModule } from 'primeng/button';
 
   imports: [
     CommonModule,
-    CalendarModule,     
     FormsModule,
-    ButtonModule
+    // CalendarModule,     
+    // FormsModule,
+    // ButtonModule
   ],
 
   exports: [
-    FormsModule,
+    // FormsModule,
     CalendarComponent,
     TButtonComponent,
     TInputComponent

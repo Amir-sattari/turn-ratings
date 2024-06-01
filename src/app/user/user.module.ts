@@ -16,8 +16,7 @@ import { TodayTurnsComponent } from './today-turns/today-turns.component';
 import { FinancialReportsComponent } from './financial-reports/financial-reports.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserContainerComponent } from './user-container/user-container.component';
-import { ButtonModule } from 'primeng/button';
-import { StepperModule } from 'primeng/stepper';
+
 
 
 import { SharedModule } from '../../app/shared/shared.module';
@@ -44,9 +43,7 @@ import { SharedModule } from '../../app/shared/shared.module';
   imports: [
     CommonModule,
     UserRoutingModule,
-    ButtonModule,
     SharedModule,
-    StepperModule 
   ]
 })
 export class UserModule { }

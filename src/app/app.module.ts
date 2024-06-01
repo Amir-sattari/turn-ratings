@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 
 
 
-import { CalendarModule } from 'primeng/calendar';
-import { FormsModule } from '@angular/forms';
-import { ButtonModule } from 'primeng/button';
+// import { CalendarModule } from 'primeng/calendar';
+// import { FormsModule } from '@angular/forms';
+// import { ButtonModule } from 'primeng/button';
 
 
 
@@ -29,9 +29,9 @@ import { ButtonModule } from 'primeng/button';
     NgPersianDatepickerModule,
     ReactiveFormsModule,
   
-    CalendarModule,     
-    FormsModule,
-    ButtonModule
+    // CalendarModule,     
+    // FormsModule,
+    // ButtonModule
   ],
   providers: [
     provideClientHydration()
