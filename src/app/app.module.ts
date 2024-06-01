@@ -1,23 +1,37 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingComponent } from './components/landing/landing.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+
+
+
+
+import { CalendarModule } from 'primeng/calendar';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent,
-    CalendarComponent,
+
     
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgPersianDatepickerModule,
-    ReactiveFormsModule,    
+    ReactiveFormsModule,
+  
+    CalendarModule,     
+    FormsModule,
+    ButtonModule
   ],
   providers: [
     provideClientHydration()

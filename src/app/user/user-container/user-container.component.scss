@@ -1,0 +1,16 @@
+.container-m {
+  @apply flex w-full h-full;
+}
+.router-container {
+  @apply h-screen bg-sky-500;
+  flex: 1;
+}
+.wrapper {
+  @apply max-w-7xl bg-white rounded-2xl p-4;
+  margin: 75px auto;
+  min-height: 768px;
+}
+
+:host {
+  @apply block h-full;
+}
