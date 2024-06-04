@@ -1,11 +1,33 @@
-<div class="flex flex-col items-center flex-nowrap gap-6 mt-48">
+<div class="flex flex-col items-center flex-nowrap gap-6 mt-32" [class.hidden]="showCalendar">
 
-    <app-t-input lable="نام و نام خانوادگی" value="{{username}}" type="text"></app-t-input>
-    <app-t-input lable=" کد ملی " value="{{nationalCode}}" type="text"></app-t-input>
-    <app-t-input lable=" شماره همراه " value="{{phoneNumber}}" type="text"></app-t-input>
+    <img src="../../../assets/images/young-man-profile-vector-14770074 copy 2 (1).png" alt="">
 
-    <app-t-button label=" بعدی " type="submit" [routerLink]="['/user/add-patient']"></app-t-button>
+    <br>
+
+    <app-t-input lable="نام و نام خانوادگی" [value]="username" type="text"></app-t-input>
+    <app-t-input lable=" کد ملی " [value]="nationalCode" type="text"></app-t-input>
+    <app-t-input lable=" شماره همراه " [value]="phoneNumber" type="text"></app-t-input>
+
+    <app-t-button class="mt-3" label=" بعدی " (click)="onNextStep1()"></app-t-button>
 
 </div>
 
+<ng-container *ngIf="showCalendar">
 
+    <app-calendar class="m-auto mt-40 "></app-calendar>
+
+    <div class="round">
+        <input type="checkbox" checked id="checkbox" />
+        <label for="checkbox"></label>
+        <p>در صورت تکمیل بودن ظرفیت نوبت ها ، نوبت آزاد را انتخاب کنید.</p>
+    </div>
+
+    <app-t-button class="mt-14 flex justify-center" label=" بعدی " (click)="onNextStep2()"></app-t-button>
+
+</ng-container>
+
+<ng-container *ngIf="showModuleSavePatient">
+
+<app-alert-model/>
+
+</ng-container>

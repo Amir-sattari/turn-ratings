@@ -1,0 +1,9 @@
+.box-model {
+  @apply bg-white gap-5 p-40 h-1/4 rounded-3xl border-solid border-b-slate-500 m-auto absolute flex items-center justify-center flex-col;
+  width: 28rem;
+//   margin-top: -374px;
+//   margin-right: 356px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}

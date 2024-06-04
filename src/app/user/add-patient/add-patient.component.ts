@@ -11,5 +11,14 @@ export class AddPatientComponent {
   username: string = '';
   nationalCode: string = '';
   phoneNumber: string = '';
+  showCalendar: boolean = false;
+  showModuleSavePatient: boolean = false;
 
+  onNextStep1() {
+    this.showCalendar = true;
+  }
+
+  onNextStep2() {
+    this.showModuleSavePatient = true;
+  }
 }
