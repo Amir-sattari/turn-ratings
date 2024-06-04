@@ -4,6 +4,9 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { TButtonComponent } from './components/t-button/t-button.component';
 import { TInputComponent } from './components/t-input/t-input.component';
 import { FormsModule } from '@angular/forms';
+import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AlertModelComponent } from './components/alert-model/alert-model.component';
 
 
 // import { CalendarModule } from 'primeng/calendar';
@@ -16,12 +19,15 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     CalendarComponent,
     TButtonComponent,
-    TInputComponent
+    TInputComponent,
+    AlertModelComponent
   ],
 
   imports: [
     CommonModule,
     FormsModule,
+    NgPersianDatepickerModule,
+    ReactiveFormsModule
     // CalendarModule,     
     // FormsModule,
     // ButtonModule
@@ -31,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     // FormsModule,
     CalendarComponent,
     TButtonComponent,
-    TInputComponent
+    TInputComponent,
+    AlertModelComponent
   ]
 })
 export class SharedModule { }
