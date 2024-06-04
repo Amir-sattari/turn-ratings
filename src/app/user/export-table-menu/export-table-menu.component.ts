@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './export-table-menu.component.scss'
 })
 export class ExportTableMenuComponent {
+  public export: boolean = false;
 
+  public getExport(): void
+  {
+    this.export = this.export == true ? false : true;
+  }
 }

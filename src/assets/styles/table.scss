@@ -1,0 +1,23 @@
+ .t-container {
+    @apply flex flex-col justify-center items-center w-full z-10;
+    // height: 46rem;
+}
+
+.t-header {
+    @apply flex justify-between px-3 pt-4 pb-4 w-2/3 font-bold;
+    border-radius: 2rem 2rem 0 0;
+    background: #DADADA;
+}
+
+.t-row {
+    @apply flex justify-between gap-1 w-2/3 pt-1;
+}
+
+.t-row > td {
+    @apply flex justify-center items-center flex-1 p-2;
+    background: #DADADA;
+}
+
+.t-row .index {
+    @apply max-w-12 w-full;
+}

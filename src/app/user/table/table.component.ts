@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class TableComponent {
 
+  @Input() titles: any = ['ردیف','نام و نام خانوادگی','کد ملی','شماره همراه','تاریخ و ساعت مراجعه',]
+  @Input() values: any = ['امیر حسین ستاری','4271637858','09214904528','هر موقع دلم خواست میام',]
+
+
+  // var a = [
+  //   {
+  //     id: 1,
+  //     name: "amir hossein"
+  //   }
+  // ]
 }

@@ -1,1 +1,26 @@
-<p>export-table-menu works!</p>
+<div class="container" (click)="getExport()">
+    <img src="../../../assets/images/Vector (9).svg" alt="">
+    <span>چاپ</span>
+</div>
+
+<ng-container *ngIf="export">
+    <div class="export-menu">
+
+        <div class="export-item">
+            <img src="../../../assets/images/544.png" alt="">
+            <span>pdf</span>
+        </div>
+
+        <div class="export-item">
+            <img src="../../../assets/images/454.png" alt="">
+            <span>word</span>
+        </div>
+
+        <div class="export-item">
+            <img src="../../../assets/images/4654.png" alt="">
+            <span>excel</span>
+        </div>
+
+    </div>
+
+</ng-container>
