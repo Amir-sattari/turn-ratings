@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertModelComponent } from './components/alert-model/alert-model.component';
+import { TTableComponent } from './components/t-table/t-table.component';
 
 
 // import { CalendarModule } from 'primeng/calendar';
@@ -20,7 +21,8 @@ import { AlertModelComponent } from './components/alert-model/alert-model.compon
     CalendarComponent,
     TButtonComponent,
     TInputComponent,
-    AlertModelComponent
+    AlertModelComponent,
+    TTableComponent
   ],
 
   imports: [
@@ -38,7 +40,8 @@ import { AlertModelComponent } from './components/alert-model/alert-model.compon
     CalendarComponent,
     TButtonComponent,
     TInputComponent,
-    AlertModelComponent
+    AlertModelComponent,
+    TTableComponent
   ]
 })
 export class SharedModule { }

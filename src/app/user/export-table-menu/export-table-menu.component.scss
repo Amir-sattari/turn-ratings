@@ -1,6 +1,5 @@
 :host {
-    @apply flex flex-col justify-center items-center h-full;
-}
+    @apply flex flex-col justify-center h-full items-end;}
 
 .container {
     @apply flex justify-center items-center gap-3 max-w-32 w-full rounded-2xl p-2
@@ -12,15 +11,33 @@ span {
     @apply font-bold text-xl;
 }
 
-.export-menu {
-    @apply flex flex-col items-center max-w-36 w-full max-h-48 h-full rounded-2xl fixed bottom-36;
-    border: 2px solid #409CFF;
-}
 
 .export-item {
-    @apply flex flex-row-reverse gap-4 justify-center items-center cursor-pointer;
+    display: flex;
+    cursor: pointer;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-align: center;
+}
 
-    &:hover {
-        @apply bg-gray-800;
-    }
+.export-menu {
+    z-index: 50;
+    display: flex;
+    height: 100%;
+    max-height: 9rem;
+    width: 100%;
+    max-width: 12rem;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    border: 2px solid #409CFF;
+    position: relative;
+    opacity: 0.9;
+    text-align: center;
+    gap: 22px;
+    padding: 10px;
 }

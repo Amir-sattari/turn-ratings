@@ -1,4 +1,9 @@
-<div class="flex flex-col items-center flex-nowrap gap-6 mt-32" [class.hidden]="showCalendar">
+
+<!-- ......................................................
+.......................step--1.............................
+....................................................... -->
+
+<div class="flex flex-col items-center flex-nowrap gap-6" [class.hidden]="showCalendar">
 
     <img src="../../../assets/images/young-man-profile-vector-14770074 copy 2 (1).png" alt="">
 
@@ -12,22 +17,46 @@
 
 </div>
 
+<!-- ......................................................
+......................./step--1.............................
+....................................................... -->
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+
+<!-- ......................................................
+.......................step--2.............................
+....................................................... -->
+
 <ng-container *ngIf="showCalendar">
 
-    <app-calendar class="m-auto mt-40 "></app-calendar>
+    <app-calendar class="m-auto mt-4"></app-calendar>
 
-    <div class="round">
-        <input type="checkbox" checked id="checkbox" />
-        <label for="checkbox"></label>
-        <p>در صورت تکمیل بودن ظرفیت نوبت ها ، نوبت آزاد را انتخاب کنید.</p>
+    <div class="text-calendar">
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> در صورت تکمیل بودن ظرفیت نوبت ها ، نوبت آزاد را انتخاب کنید. </label><br>
     </div>
 
-    <app-t-button class="mt-14 flex justify-center" label=" بعدی " (click)="onNextStep2()"></app-t-button>
+    <app-t-button class=" flex justify-center" label=" بعدی " (click)="onNextStep2()"></app-t-button>
 
 </ng-container>
+
+<!-- ......................................................
+......................./step--2.............................
+....................................................... -->
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+
+<!-- ......................................................
+.......................step--3.............................
+....................................................... -->
 
 <ng-container *ngIf="showModuleSavePatient">
 
-<app-alert-model/>
+<app-alert-model class="m-auto flex absolute" routerLink="">
+</app-alert-model>
 
 </ng-container>
+
+<!-- ......................................................
+......................./step--3.............................
+....................................................... -->

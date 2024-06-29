@@ -1,7 +1,41 @@
-:host {
-    @apply flex flex-col justify-center items-center h-full;
+// :host {
+//   @apply flex flex-col justify-center items-center h-full w-full;
+// }
+
+// tbody {
+//   @apply flex flex-col justify-center items-center w-full;
+// }
+
+.table-box {
+  font-family: vazir;
+  display: flex; 
+  direction: rtl !important;
 }
 
-tbody {
-    @apply flex flex-col justify-center items-center w-full;
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  @apply z-10;
+}
+
+th {
+    background-color: #DADADA;  
+    padding: 20px;
+}
+
+td {
+  background-color: #DADADA;
+  border: 3px solid #ffffff;
+  text-align: center;
+  padding: 8px;
+}
+
+// th {
+//     background-color: aqua;
+// }
+
+
+tr {
+  background-color: #ffffff;
 }
