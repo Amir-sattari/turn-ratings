@@ -1,0 +1,23 @@
+:host {
+    @apply flex flex-col justify-between items-center h-full;
+}
+
+.container {
+    @apply flex flex-col justify-center items-center gap-8 w-full;
+}
+
+.input-div {
+    @apply rounded-2xl w-full p-2 relative;
+    border: 3px solid #409CFF;
+}
+
+input {
+    @apply p-1 outline-none w-full;
+}
+
+.search {
+    font-size: 2rem;
+    position: absolute;
+    left: 0.5rem;
+    color: #409CFF;
+}
