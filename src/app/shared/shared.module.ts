@@ -8,6 +8,8 @@ import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertModelComponent } from './components/alert-model/alert-model.component';
 import { TTableComponent } from './components/t-table/t-table.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 
 
 // import { CalendarModule } from 'primeng/calendar';
@@ -29,7 +31,8 @@ import { TTableComponent } from './components/t-table/t-table.component';
     CommonModule,
     FormsModule,
     NgPersianDatepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule 
     // CalendarModule,     
     // FormsModule,
     // ButtonModule
@@ -41,7 +44,8 @@ import { TTableComponent } from './components/t-table/t-table.component';
     TButtonComponent,
     TInputComponent,
     AlertModelComponent,
-    TTableComponent
+    TTableComponent,
+    HttpClientModule 
   ]
 })
 export class SharedModule { }

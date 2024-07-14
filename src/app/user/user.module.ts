@@ -16,8 +16,10 @@ import { TodayTurnsComponent } from './today-turns/today-turns.component';
 import { FinancialReportsComponent } from './financial-reports/financial-reports.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserContainerComponent } from './user-container/user-container.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 
+ 
 
 import { SharedModule } from '../../app/shared/shared.module';
 
@@ -44,6 +46,7 @@ import { SharedModule } from '../../app/shared/shared.module';
     CommonModule,
     UserRoutingModule,
     SharedModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }
