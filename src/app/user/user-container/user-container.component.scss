@@ -7,8 +7,9 @@
 }
 .wrapper {
   @apply flex justify-center items-center max-w-7xl bg-white rounded-2xl p-4 relative;
+  @apply flex justify-center items-center max-w-5xl bg-white rounded-2xl p-4;
   margin: 75px auto;
-  min-height: 768px;
+  min-height: 46rem;
 }
 
 :host {

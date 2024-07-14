@@ -8,6 +8,8 @@ import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertModelComponent } from './components/alert-model/alert-model.component';
 import { TTableComponent } from './components/t-table/t-table.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 import { BackIconComponent } from './components/back-icon/back-icon.component';
 
 
@@ -31,7 +33,8 @@ import { BackIconComponent } from './components/back-icon/back-icon.component';
     CommonModule,
     FormsModule,
     NgPersianDatepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule 
     // CalendarModule,     
     // FormsModule,
     // ButtonModule
@@ -44,6 +47,7 @@ import { BackIconComponent } from './components/back-icon/back-icon.component';
     TInputComponent,
     AlertModelComponent,
     TTableComponent,
+    HttpClientModule ,
     BackIconComponent
   ]
 })

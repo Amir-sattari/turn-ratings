@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule  } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule} from '@angular/common/http';
 
 
 
@@ -28,7 +29,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     NgPersianDatepickerModule,
     ReactiveFormsModule,
-  
+    HttpClientModule
     // CalendarModule,     
     // FormsModule,
     // ButtonModule
@@ -36,6 +37,7 @@ import { AppComponent } from './app.component';
   providers: [
     provideClientHydration()
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

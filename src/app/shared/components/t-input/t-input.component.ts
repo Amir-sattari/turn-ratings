@@ -11,8 +11,4 @@ export class TInputComponent {
   @Input() type: string = '';
   @Input() lable: string = '';
   
-  phoneNumber: string = ''; 
-  username: string = ''; 
-  nationalCode: string = ''; 
-
 }
