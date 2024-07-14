@@ -8,6 +8,7 @@ import { TableComponent } from './components/table/table.component';
 import { ExportTableMenuComponent } from './components/export-table-menu/export-table-menu.component';
 import { SearchPatientComponent } from './components/search-patient/search-patient.component';
 import { TableHeaderComponent } from './components/table-header/table-header.component';
+import { PatientReferralsComponent } from './components/patient-referrals/patient-referrals.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'export', pathMatch: "full", component: ExportTableMenuComponent },
       { path: 'search-patient', pathMatch: "full", component: SearchPatientComponent },
       { path: 'header', pathMatch: "full", component: TableHeaderComponent },
+      { path: 'referrals', pathMatch: "full", component: PatientReferralsComponent },
 
       
     ],
