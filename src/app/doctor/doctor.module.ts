@@ -17,6 +17,7 @@ import { TodayTurnsComponent } from './components/today-turns/today-turns.compon
 import { DoctorContainerComponent } from './components/doctor-container/doctor-container.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { SharedModule } from '../shared/shared.module';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SharedModule } from '../shared/shared.module';
     TableHeaderComponent,
     TodayTurnsComponent,
     DoctorContainerComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

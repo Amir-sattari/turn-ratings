@@ -1,5 +1,5 @@
 :host {
-  @apply w-full;
+  @apply flex justify-center items-center w-full;
 }
 
 .container {
@@ -36,50 +36,3 @@
 .row:last-child {
   border-radius: 0 0 1.5rem 1.5rem;
 }
-
-
-
-
-
-
-// :host {
-//   @apply flex flex-col justify-center items-center h-full w-full;
-// }
-
-// tbody {
-//   @apply flex flex-col justify-center items-center w-full;
-// }
-
-
-// .table-box {
-//   font-family: vazir;
-//   display: flex; 
-//   direction: rtl !important;
-//   width: 100%;
-// }
-
-// .table {
-//   font-family: arial, sans-serif;
-//   width: 100%;
-// }
-
-// thead tr {
-//   background-color: #DADADA;
-//   border-radius: 1rem 1rem 0 0;
-// }
-
-// th {
-//   padding: 20px;
-// }
-
-// td {
-//   background-color: #DADADA;
-//   border: 3px solid #ffffff;
-//   text-align: center;
-//   padding: 8px;
-// }
-
-
-// tbody tr {
-//   background-color: #ffffff;
-// }
