@@ -1,0 +1,100 @@
+:host {
+    @apply flex justify-center items-center h-full;
+}
+
+.container {
+    @apply flex flex-col justify-center items-center gap-8;
+    width: 50rem;
+}
+
+.search-div {
+    @apply rounded-xl p-2 relative;
+    border: 2px solid rgb(191 191 191 / 96%);
+    width: 700px;
+    transition: all 1.2s ease;
+
+    input {
+        @apply w-full outline-none;
+    }
+}
+
+.search {
+    color: rgba(156, 155, 155, 0.96);
+    position: absolute;
+    font-size: 2rem;
+    left: 0;
+    top: 0.25rem;
+}
+
+.filter-div {
+    @apply flex justify-between items-center gap-2 w-full select-none;
+}
+
+.open-filter-button {
+    @apply flex justify-center items-end rounded-xl p-2 cursor-pointer;
+    background-color: #E3E3E3;
+}
+
+.open-filter-button img {
+    width: 34px;
+    height: 34px;
+}
+
+.filters {
+    @apply flex justify-between items-center p-3 rounded-xl select-none relative;
+    max-width: 700px;
+    width: 100%;
+
+    background-color: #E3E3E3;
+}
+
+.filters span {
+    @apply flex justify-center items-center cursor-pointer flex-1;
+
+}
+
+.table {
+    @apply w-full;
+}
+
+.minimize-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    transition: all 0.8s ease;
+
+    .search {
+        font-size: 2rem;
+    }
+
+    input {
+        display: none;
+    }
+}
+
+.set-date-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    gap: 0.5rem;
+    
+    span {
+        gap: 0.5rem;
+    cursor: default;
+
+    }
+}
+
+.time {
+    background-color: #409CFF;
+    border-radius: 0.5rem;
+    color: white;
+    width: 100%;
+    outline: none;
+    text-align: center;
+    direction: ltr;
+    padding-top: 3px;
+}

@@ -11,6 +11,8 @@ import { TTableComponent } from './components/t-table/t-table.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { BackIconComponent } from './components/back-icon/back-icon.component';
+import { ErrorFieldComponent } from './components/error-field/error-field.component';
+import { ValidationPipe } from './pipes/validation.pipe';
 
 
 // import { CalendarModule } from 'primeng/calendar';
@@ -26,7 +28,9 @@ import { BackIconComponent } from './components/back-icon/back-icon.component';
     TInputComponent,
     AlertModelComponent,
     TTableComponent,
-    BackIconComponent
+    BackIconComponent,
+    ErrorFieldComponent,
+    ValidationPipe
   ],
 
   imports: [
@@ -34,7 +38,7 @@ import { BackIconComponent } from './components/back-icon/back-icon.component';
     FormsModule,
     NgPersianDatepickerModule,
     ReactiveFormsModule,
-    HttpClientModule 
+    HttpClientModule,
     // CalendarModule,     
     // FormsModule,
     // ButtonModule
@@ -47,8 +51,10 @@ import { BackIconComponent } from './components/back-icon/back-icon.component';
     TInputComponent,
     AlertModelComponent,
     TTableComponent,
-    HttpClientModule ,
-    BackIconComponent
+    HttpClientModule,
+    BackIconComponent,
+    ErrorFieldComponent,
+    ValidationPipe,
   ]
 })
 export class SharedModule { }

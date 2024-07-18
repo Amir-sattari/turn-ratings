@@ -1,0 +1,5 @@
+<ng-container *ngIf="control.errors && (control.touched || control.dirty)">
+    <small class="{{styles}}">
+        {{ errorMessage | validation: control.errors }}
+    </small>
+</ng-container>

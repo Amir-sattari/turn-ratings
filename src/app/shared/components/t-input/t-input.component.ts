@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AbstractControl, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-t-input',
@@ -10,5 +11,5 @@ export class TInputComponent {
   @Input() value: string = '';
   @Input() type: string = '';
   @Input() lable: string = '';
-  
+
 }
