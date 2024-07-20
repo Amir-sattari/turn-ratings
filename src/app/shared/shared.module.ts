@@ -11,6 +11,7 @@ import { TTableComponent } from './components/t-table/t-table.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { BackIconComponent } from './components/back-icon/back-icon.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 // import { CalendarModule } from 'primeng/calendar';
@@ -26,7 +27,8 @@ import { BackIconComponent } from './components/back-icon/back-icon.component';
     TInputComponent,
     AlertModelComponent,
     TTableComponent,
-    BackIconComponent
+    BackIconComponent,
+    LoadingComponent,
   ],
 
   imports: [
@@ -48,7 +50,11 @@ import { BackIconComponent } from './components/back-icon/back-icon.component';
     AlertModelComponent,
     TTableComponent,
     HttpClientModule ,
-    BackIconComponent
+    BackIconComponent,
+    LoadingComponent,
+
   ]
 })
-export class SharedModule { }
+export class SharedModule { 
+  
+}
