@@ -7,12 +7,12 @@
 
   <div class="text-sidebar">
 
-    <span>جستجو</span>
-    <span>بیماران</span>
-    <span>مراجعات</span>
-    <span>بیمار جدید</span>
-    <span>گزارشات</span>
-    <span>نوبت ها</span>
+    <span [routerLink]="['/doctor/search-patient']" routerLinkActive="active">جستجو</span>
+    <span [routerLink]="['/doctor/patients']" routerLinkActive="active">بیماران</span>
+    <span routerLinkActive="active">مراجعات</span>
+    <span [routerLink]="['/doctor/add-patient']" routerLinkActive="active">بیمار جدید</span>
+    <span routerLinkActive="active">گزارشات</span>
+    <span routerLinkActive="active">نوبت ها</span>
 
   </div>
 

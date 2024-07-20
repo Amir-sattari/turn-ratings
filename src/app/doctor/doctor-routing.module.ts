@@ -9,6 +9,8 @@ import { ExportTableMenuComponent } from './components/export-table-menu/export-
 import { SearchPatientComponent } from './components/search-patient/search-patient.component';
 import { TableHeaderComponent } from './components/table-header/table-header.component';
 import { PatientReferralsComponent } from './components/patient-referrals/patient-referrals.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PatientsComponent } from './components/patients/patients.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,8 @@ const routes: Routes = [
       { path: 'search-patient', pathMatch: "full", component: SearchPatientComponent },
       { path: 'header', pathMatch: "full", component: TableHeaderComponent },
       { path: 'referrals', pathMatch: "full", component: PatientReferralsComponent },
+      { path: 'not-found', pathMatch: "full", component: NotFoundComponent },
+      { path: 'patients', pathMatch: "full", component: PatientsComponent },
 
       
     ],

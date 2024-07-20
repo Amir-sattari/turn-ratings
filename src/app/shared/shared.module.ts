@@ -12,6 +12,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { BackIconComponent } from './components/back-icon/back-icon.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { ErrorFieldComponent } from './components/error-field/error-field.component';
+import { ValidationPipe } from './pipes/validation.pipe';
 
 
 // import { CalendarModule } from 'primeng/calendar';
@@ -29,6 +31,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     TTableComponent,
     BackIconComponent,
     LoadingComponent,
+    ErrorFieldComponent,
+    ValidationPipe
   ],
 
   imports: [
@@ -36,7 +40,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     FormsModule,
     NgPersianDatepickerModule,
     ReactiveFormsModule,
-    HttpClientModule 
+    HttpClientModule,
     // CalendarModule,     
     // FormsModule,
     // ButtonModule
@@ -52,7 +56,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     HttpClientModule ,
     BackIconComponent,
     LoadingComponent,
-
+    ErrorFieldComponent,
+    ValidationPipe,
   ]
 })
 export class SharedModule { 
