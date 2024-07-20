@@ -4,21 +4,23 @@
 
     <div class="filter-div">
 
-        <div class="open-filter-button" (click)="openFilters()">
-            <img src="../../../../assets/images/filter.svg" alt="">
-            <span>فیلتر</span>
-        </div>
+        <div class="filters" [class.minimize-filters]="!showFilters">
 
-        <div class="filters" *ngIf="showFilters" [class.minimize-filters]="!showFilters">
-            <span>امروز</span>
-            <span>این هفته</span>
-            <span>این ماه</span>
-            <span (click)="openDateTimeForm()">بازه زمانی</span>
+            <div class="open-filter-button" (click)="openFilters()">
+                <img src="../../../../assets/images/filter.svg" alt="">
+                <span>فیلتر</span>
+            </div>
+
+            <span class="filter">امروز</span>
+            <span class="filter">این هفته</span>
+            <span class="filter">این ماه</span>
+            <span class="filter" (click)="openDateTimeForm()">بازه زمانی</span>
 
             <div class="set-date-form" *ngIf="showDateTimeForm">
-                <span>از  <input type="text" value="1403/1/12" class="time"> </span>
-                <span>تا  <input type="text" value="1403/3/12" class="time"> </span>
+                <span>از <input type="text" value="1403/1/12" class="time"> </span>
+                <span>تا <input type="text" value="1403/3/12" class="time"> </span>
             </div>
+
         </div>
 
         <div class="search-div" [class.minimize-search]="showFilters" (click)="showFilters ? openFilters() : ''">
