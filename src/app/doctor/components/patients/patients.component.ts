@@ -12,10 +12,10 @@ export class PatientsComponent {
 
   public openFilters(): void
   {
-    if(!this.showFilters)
-      this.showDateTimeForm = false;
-    
     this.showFilters = this.showFilters ? false : true;
+    
+    if(!this.showFilters && this.showDateTimeForm)
+      this.showDateTimeForm = false;
   }
 
   public openDateTimeForm(): void

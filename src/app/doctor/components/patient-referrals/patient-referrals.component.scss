@@ -3,18 +3,25 @@
 }
 
 .container {
-    @apply flex flex-col justify-center items-center gap-12 w-full relative;
+    @apply flex flex-col justify-center items-center gap-12 w-full ;
 
 }
 
 .user-information {
     background-color: #409CFF;
-    @apply flex justify-between items-end text-white h-32 p-6
-    rounded-3xl w-full;
+    @apply flex justify-between items-end text-white h-28
+    rounded-3xl w-full relative;
+}
+
+.user-information span {
+    @apply px-4 mb-2;
 }
 
 img {
     position: absolute;
-    right: 22rem;
-    top: -4rem;
+    top: -5rem;
+    right: 20rem;
+    background-color: white;
+    border-radius: 100rem;
+    padding: 0.5rem;
 }

@@ -1,5 +1,14 @@
+:host {
+  @apply flex justify-center items-center w-full;
+}
+
+.inputs {
+  @apply flex justify-center items-center w-full;
+}
+
 .input {
-  @apply block w-72 h-12 bg-white focus:outline-none border-2 border-gray-300 rounded-xl py-3 px-3 block appearance-none leading-normal focus:border-blue-600 text-lg;
+  @apply block w-80 h-12 bg-white focus:outline-none border-2 border-gray-300
+  rounded-xl p-3 appearance-none leading-normal focus:border-blue-600 text-lg;
 }
 
 .lable {

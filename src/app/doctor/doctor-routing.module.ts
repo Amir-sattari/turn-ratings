@@ -20,7 +20,7 @@ const routes: Routes = [
 
       { path: '', pathMatch: "full", component: SearchPatientComponent },
       { path: 'add-patient', pathMatch: "full", component: AddPatientComponent },
-      { path: 'money', pathMatch: "full", component: FinancialReportsComponent },
+      { path: 'financial-reports', pathMatch: "full", component: FinancialReportsComponent },
       { path: 'table', pathMatch: "full", component: TableComponent },
       { path: 'export', pathMatch: "full", component: ExportTableMenuComponent },
       { path: 'search-patient', pathMatch: "full", component: SearchPatientComponent },

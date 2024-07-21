@@ -1,3 +1,8 @@
+:host {
+    @apply flex justify-center items-center w-full;
+}
+
 .btn {
-    @apply shadow-xl bg-sky-500 text-white pt-3 pb-3 pr-12 pl-12 rounded-xl ;
+    @apply shadow-xl text-white w-2/3 p-3 rounded-xl ;
+    background-color: #409CFF;
 }
