@@ -18,6 +18,8 @@ import { DoctorContainerComponent } from './components/doctor-container/doctor-c
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { SharedModule } from '../shared/shared.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestInterceptor } from './interceptor/request.interceptor';
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     CommonModule,
     DoctorRoutingModule,
     SharedModule
-  ]
+  ],
+ 
 })
 export class DoctorModule { }

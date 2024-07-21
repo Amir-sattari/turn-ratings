@@ -3,40 +3,87 @@
       <div class="fixed logo">
         <img src="../../../assets/images/logo.png" alt="" />
       </div>
-      
-      <div class="main-login mt-24">
   
+      <div class="main-login mt-24">
         <h1 class="text-xl text-gray-500 text-center font-extrabold">
           شمارهٔ موبایل خود را وارد کنید
         </h1>
-  
         <br />
-  
       </div>
   
       <div class="inputs">
+
         <div class="relative float-label-input">
           <input type="text" id="user-name" placeholder="" class="input" [(ngModel)]="username" name="user-name" />
           <label for="user-name" class="lable">نام کاربری</label>
         </div>
+
         <div class="relative float-label-input">
-            <input type="tel" id="phone-number" placeholder="" class="input" [(ngModel)]="phoneNumber" name="phoneNumber" required pattern="[0-9]*" minlength="8" maxlength="8" #phoneNumberInput="ngModel" />
-            <label for="phone-number" class="lable">رمز عبور</label>
-            <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.touched)" class="text-red-500"> این فیلد شامل عدد میباشد </div>
-          </div>
-        <div class="forget-and-remember-div">
-            <span routerLink="/auth/otp-login" class="forget-pass" >ورود با شماره همراه</span> 
+          <input type="{{ type }}" id="phone-number" placeholder="" class="input" [(ngModel)]="phoneNumber" name="phoneNumber" required pattern="[0-9]*" minlength="3" maxlength="3" #phoneNumberInput="ngModel" />
+          <label for="phone-number" class="lable">رمز عبور</label>
+          <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.touched)" class="text-red-500"> این فیلد شامل عدد میباشد </div>
+          <span class="material-symbols-rounded" (click)="showPassword()">{{ isVisible ? 'visibility_off' : 'visibility' }}</span>
         </div>
+
+        <div class="forget-and-remember-div">
+          <span routerLink="/auth/otp-login" class="forget-pass">ورود با شماره همراه</span>
+        </div>
+        
       </div>
-  
-  
-      <!-- <h5 class="text-base text-gray-500 text-center mt-7" >با وارد کردن شماره <span class="text-blue-600 cursor-pointer">شرایط استفاده از خدمات</span> و <span class="text-blue-600 cursor-pointer">حریم خصوصی</span> را قبول می کنید</h5> -->
   
       <br />
   
       <div class="flex">
-        <button [disabled]="phoneNumberInput.invalid" class="btn-next" routerLink="">ورود</button>
+        <button [disabled]="phoneNumberInput.invalid" (click)="login()" class="btn-next">ورود</button>
       </div>
       
+      <div *ngIf="loading"><app-loading></app-loading></div>
     </div>
   </div>
+  
+
+
+
+
+
+
+<!-- 
+
+  <div class="body-container">
+
+    <div class="container">
+  
+      <div class="fixed logo">
+        <img src="../../../assets/images/logo.png" alt="" />
+      </div>
+  
+      <div class="main-login mt-24">
+        <h1 class="text-xl text-gray-500 text-center font-extrabold"> شمارهٔ موبایل خود را وارد کنید </h1>
+        <br />
+      </div>
+  
+      <div class="inputs">
+        <div class="relative float-label-input">
+          <app-t-input lable="نام کاربری" type="text" id="user-name" placeholder="" [(ngModel)]="username" name="user-name"></app-t-input>
+        </div>
+      
+        <div class="relative float-label-input">
+          <app-t-input lable="رمز عبور" [type]="type" id="phone-number" placeholder="" [(ngModel)]="phoneNumber" name="phoneNumber" required pattern="[0-9]*" minlength="3" maxlength="3" #phoneNumberInput="ngModel"></app-t-input>
+          <span class="material-symbols-rounded show-hide-icon" (click)="showPassword()">{{ isVisible ? 'visibility_off' : 'visibility' }}</span>
+          <div *ngIf="phoneNumberInput.invalid && (phoneNumberInput.touched)" class="text-red-500"> این فیلد شامل عدد میباشد </div>
+        </div>      
+      
+        <div class="forget-and-remember-div">
+          <span routerLink="/auth/otp-login" class="forget-pass">ورود با شماره همراه</span>
+        </div>
+      </div>
+  
+      <br />
+  
+      <div class="flex">
+        <app-t-button label="ورود" (click)="login()"></app-t-button>
+      </div>
+      
+      <div *ngIf="loading"><app-loading></app-loading></div>
+    </div>
+  </div> -->

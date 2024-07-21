@@ -8,8 +8,9 @@ import { AbstractControl, FormControl } from '@angular/forms';
 })
 export class TInputComponent {
 
-  @Input() value: string = '';
+  @Input() value: string = '222';
   @Input() type: string = '';
   @Input() lable: string = '';
+  @Input() name: string = '';
 
 }

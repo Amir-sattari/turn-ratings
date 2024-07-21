@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 
 export class ApiService {
   ResponseInfo: IResponse = <IResponse>{};
-  apiAddress: string = "http://188.34.206.214:88/api/";
+  apiAddress: string = "http://188.34.206.214:88/api/v1/";
 
   constructor(private http: HttpClient) {}
 

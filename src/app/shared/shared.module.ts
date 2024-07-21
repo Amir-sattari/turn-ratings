@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { TButtonComponent } from './components/t-button/t-button.component';
 import { TInputComponent } from './components/t-input/t-input.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertModelComponent } from './components/alert-model/alert-model.component';
@@ -11,6 +11,7 @@ import { TTableComponent } from './components/t-table/t-table.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { BackIconComponent } from './components/back-icon/back-icon.component';
+import { LoadingComponent } from './components/loading/loading.component';
 import { ErrorFieldComponent } from './components/error-field/error-field.component';
 import { ValidationPipe } from './pipes/validation.pipe';
 
@@ -29,6 +30,7 @@ import { ValidationPipe } from './pipes/validation.pipe';
     AlertModelComponent,
     TTableComponent,
     BackIconComponent,
+    LoadingComponent,
     ErrorFieldComponent,
     ValidationPipe
   ],
@@ -51,10 +53,14 @@ import { ValidationPipe } from './pipes/validation.pipe';
     TInputComponent,
     AlertModelComponent,
     TTableComponent,
-    HttpClientModule,
+    HttpClientModule ,
     BackIconComponent,
+    LoadingComponent,
     ErrorFieldComponent,
     ValidationPipe,
-  ]
+  ],
+ 
 })
-export class SharedModule { }
+export class SharedModule { 
+  
+}
