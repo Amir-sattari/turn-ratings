@@ -28,7 +28,7 @@
       <br />
   
       <div class="flex">
-        <button [disabled]="phoneNumberInput.invalid" class="btn-next" routerLink="/auth/otp">ورود</button>
+        <button (click)="getOtpCode(phoneNumberInput.value)" [disabled]="phoneNumberInput.invalid" class="btn-next" routerLink="/auth/otp">ورود</button>
       </div>
       
     </div>
