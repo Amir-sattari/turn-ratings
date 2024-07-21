@@ -67,16 +67,16 @@ export class LoginComponent implements OnInit {
   checkRoles(roles: IRole[]) {
     roles.forEach((role) => {
       if (role.title == 'Provider') {
-        this.router.navigate(['/']);
+        this.router.navigate(['doctor/']);
       }
       if (role.title == 'admin') {
-        this.router.navigate(['/']);
+        this.router.navigate(['doctor/']);
       }
       if (role.title == 'Reception') {
-        this.router.navigate(['/']);
+        this.router.navigate(['doctor/']);
       }
       if (role.title == 'User') {
-        this.router.navigate(['/']);
+        this.router.navigate(['user/']);
       }
     });
   }

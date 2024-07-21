@@ -5,7 +5,8 @@ import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { RequestInterceptor } from './auth/interceptor/request.interceptor';
 
 
 
@@ -35,7 +36,9 @@ import { HttpClientModule} from '@angular/common/http';
     // ButtonModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
+
   ],
 
   bootstrap: [AppComponent]

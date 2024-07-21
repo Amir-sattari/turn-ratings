@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { TButtonComponent } from './components/t-button/t-button.component';
 import { TInputComponent } from './components/t-input/t-input.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertModelComponent } from './components/alert-model/alert-model.component';
@@ -58,7 +58,8 @@ import { ValidationPipe } from './pipes/validation.pipe';
     LoadingComponent,
     ErrorFieldComponent,
     ValidationPipe,
-  ]
+  ],
+ 
 })
 export class SharedModule { 
   
