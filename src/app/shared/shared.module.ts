@@ -14,6 +14,7 @@ import { BackIconComponent } from './components/back-icon/back-icon.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { ErrorFieldComponent } from './components/error-field/error-field.component';
 import { ValidationPipe } from './pipes/validation.pipe';
+import { TurnBoxComponent } from './components/turn-box/turn-box.component';
 
 
 // import { CalendarModule } from 'primeng/calendar';
@@ -32,7 +33,8 @@ import { ValidationPipe } from './pipes/validation.pipe';
     BackIconComponent,
     LoadingComponent,
     ErrorFieldComponent,
-    ValidationPipe
+    ValidationPipe,
+    TurnBoxComponent
   ],
 
   imports: [
@@ -58,6 +60,7 @@ import { ValidationPipe } from './pipes/validation.pipe';
     LoadingComponent,
     ErrorFieldComponent,
     ValidationPipe,
+    TurnBoxComponent,
   ],
  
 })
