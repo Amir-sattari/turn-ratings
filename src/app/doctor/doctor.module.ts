@@ -18,8 +18,8 @@ import { DoctorContainerComponent } from './components/doctor-container/doctor-c
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { SharedModule } from '../shared/shared.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RequestInterceptor } from './interceptor/request.interceptor';
+import { CreateTurnComponent } from './components/create-turn/create-turn.component';
+import { TurnPriceComponent } from './components/turn-price/turn-price.component';
 
 
 @NgModule({
@@ -38,7 +38,9 @@ import { RequestInterceptor } from './interceptor/request.interceptor';
     TodayTurnsComponent,
     DoctorContainerComponent,
     UserProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CreateTurnComponent,
+    TurnPriceComponent
   ],
   imports: [
     CommonModule,
