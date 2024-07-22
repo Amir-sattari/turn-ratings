@@ -1,0 +1,46 @@
+:host {
+    @apply flex justify-center items-center h-full max-w-xl w-full;
+}
+
+.container {
+    @apply flex flex-col justify-center items-center w-full gap-16 rounded-3xl;
+    height: 360px;
+    box-shadow: 2px 2px 3px rgb(207, 207, 207), -2px -2px 3px rgb(207, 207, 207);
+}
+
+.title {
+    @apply flex justify-center items-center gap-4;
+}
+
+.set-price {
+    @apply flex justify-center items-center gap-4 px-4 py-1 rounded-xl;
+    background-color: #D9D9D9
+}
+
+.price {
+    @apply flex justify-center items-center gap-2;
+}
+
+.prepayment {
+    @apply flex justify-center items-center gap-2;
+}
+
+.seperator {
+    font-size: 2rem;
+    color: #409CFF;
+}
+
+input {
+    @apply w-20 text-center text-white rounded-lg pt-1;
+    background-color: #409CFF;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+}
+
+button {
+    @apply text-white p-2 max-w-24 w-full rounded-lg;
+    background-color: #409CFF;
+}
