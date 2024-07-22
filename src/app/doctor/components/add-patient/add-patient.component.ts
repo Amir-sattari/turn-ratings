@@ -33,16 +33,14 @@ export class AddPatientComponent {
       phoneNumber: this.phoneNumber
     };
 
-    this.apiService.post('Reception/AddUser', patientData).subscribe(
-      response => {
+    this.apiService.post('Reception/AddUser', patientData).subscribe({
+      next: (response) => {
         console.log('Patient added successfully', response);
-        // پس از موفقیت به مرحله بعدی بروید
         this.onNextStep1();
       },
-      error => {
+      error: (error) => {
         console.error('There was an error!', error);
-        // هر عملی که بعد از خطا باید انجام شود
       }
-    );
+    });
   }
 }
