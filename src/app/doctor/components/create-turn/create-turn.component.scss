@@ -1,0 +1,30 @@
+:host {
+    @apply flex justify-center items-center h-full max-w-64 w-full;
+}
+
+.container {
+    @apply flex justify-center items-center w-full;
+}
+
+.items {
+    @apply flex flex-col justify-center items-center gap-8 w-full
+}
+
+.item {
+    @apply flex flex-row-reverse justify-between items-center w-full p-3 rounded-xl cursor-pointer;
+    box-shadow: 2px 2px 3px rgb(207, 207, 207), -2px -2px 3px rgb(207, 207, 207);
+}
+
+.material-symbols-rounded {
+    color: rgb(156, 155, 155);
+}
+
+.name-icon {
+    @apply flex justify-center items-center gap-2;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+    // color: #409CFF;
+}
