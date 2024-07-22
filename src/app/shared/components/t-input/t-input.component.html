@@ -3,9 +3,16 @@
     <input [type]="type" [placeholder]="placeholder" [(ngModel)]="value" class="inputs">
 </div> -->
 
-<div class="inputs">
+<!-- <div class="inputs">
     <div class="relative float-label-input">
       <input [name]="name" [type]="type" id="user-name" placeholder="" class="input" [(ngModel)]="value" />
       <label class="lable">{{lable}}</label>
     </div>
+</div> -->
+
+<div class="inputs">
+  <div class="relative float-label-input">
+    <input [name]="name" [type]="type" [value]="value" (input)="onValueChange($event)" id="user-name" placeholder="" class="input" />
+    <label class="lable">{{lable}}</label>
+  </div>
 </div>
