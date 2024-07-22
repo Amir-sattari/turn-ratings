@@ -20,6 +20,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from './interceptor/request.interceptor';
+import { CreateTurnComponent } from './components/create-turn/create-turn.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { RequestInterceptor } from './interceptor/request.interceptor';
     TodayTurnsComponent,
     DoctorContainerComponent,
     UserProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CreateTurnComponent
   ],
   imports: [
     CommonModule,
