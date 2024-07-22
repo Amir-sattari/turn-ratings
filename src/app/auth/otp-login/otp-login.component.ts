@@ -15,12 +15,10 @@ export class OtpLoginComponent {
   ) {}
 
   public getOtpCode(phoneNumber: string): void
-  {
-    const mobile: string = phoneNumber;
-    
-    this.apiService.post('AuthSimple/UserSignUp?phoneNumber=' + mobile, { phoneNumber: mobile })
+  {    
+    this.apiService.post('AuthSimple/UserSignUp?phoneNumber=' + phoneNumber, { phoneNumber: phoneNumber})
     .subscribe(res => {
-      this.otpService.userPhoneNumber = mobile;      
+      this.otpService.userPhoneNumber = phoneNumber;      
     });
     
   }

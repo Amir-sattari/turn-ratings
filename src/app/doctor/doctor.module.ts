@@ -20,6 +20,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CreateTurnComponent } from './components/create-turn/create-turn.component';
 import { TurnPriceComponent } from './components/turn-price/turn-price.component';
+import { SetTurnsComponent } from './components/set-turns/set-turns.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { TurnPriceComponent } from './components/turn-price/turn-price.component
     UserProfileComponent,
     NotFoundComponent,
     CreateTurnComponent,
-    TurnPriceComponent
+    TurnPriceComponent,
+    SetTurnsComponent
   ],
   imports: [
     CommonModule,

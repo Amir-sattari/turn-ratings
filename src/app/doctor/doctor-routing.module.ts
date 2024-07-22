@@ -13,6 +13,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PatientsComponent } from './components/patients/patients.component';
 import { CreateTurnComponent } from './components/create-turn/create-turn.component';
 import { TurnPriceComponent } from './components/turn-price/turn-price.component';
+import { SetTurnsComponent } from './components/set-turns/set-turns.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'patients', pathMatch: "full", component: PatientsComponent },
       { path: 'create-turn', pathMatch: "full", component: CreateTurnComponent },
       { path: 'turn-price', pathMatch: "full", component: TurnPriceComponent },
+      { path: 'set-turns', pathMatch: "full", component: SetTurnsComponent },
 
       
     ],

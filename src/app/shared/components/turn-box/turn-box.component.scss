@@ -1,3 +1,7 @@
+:host {
+  @apply flex justify-center items-center w-full;
+}
+
 input,
 label {
   margin: 0.4rem 0;

@@ -1,0 +1,16 @@
+:host {
+    @apply flex justify-center items-center h-full w-full;
+}
+
+.container {
+    @apply flex justify-center items-center w-full;
+    border-bottom: 1px solid gray;
+}
+
+.row {
+    @apply flex justify-start items-center w-full;
+}
+
+.time {
+    @apply flex justify-center items-center w-80;
+}

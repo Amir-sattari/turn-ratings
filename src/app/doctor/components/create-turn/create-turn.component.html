@@ -3,7 +3,7 @@
 <div class="container">
     <div class="items">
 
-        <div class="item">
+        <div class="item" [routerLink]="['/doctor/set-turns']">
 
             <span class="material-symbols-rounded">
                 arrow_back_ios
@@ -16,13 +16,13 @@
 
         </div>
 
-        <div class="item">
+        <div class="item" [routerLink]="['/doctor/turn-price']">
 
             <span class="material-symbols-rounded">
                 arrow_back_ios
             </span>
 
-            <div class="name-icon" [routerLink]="['/doctor/turn-price']">
+            <div class="name-icon">
                 <img src="../../../../assets/images/discount-price-sale-svgrepo-com.svg" alt="">
                 <span>هزینه ویزیت</span>
             </div>
