@@ -3,14 +3,23 @@
 }
 
 .container {
-    @apply flex justify-center items-center w-full;
-    border-bottom: 1px solid gray;
+    @apply flex flex-col justify-center items-center w-full;
 }
 
 .row {
-    @apply flex justify-start items-center w-full;
+    @apply flex justify-start items-center w-full gap-12 py-2;
+    border-bottom: 1px solid gray;
+
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.title {
+    @apply text-xl;
 }
 
 .time {
-    @apply flex justify-center items-center w-80;
+    @apply flex justify-center items-center;
 }
