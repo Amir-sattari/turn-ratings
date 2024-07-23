@@ -17,4 +17,12 @@ export class TableComponent {
   //     name: "amir hossein"
   //   }
   // ]
+
+  public isTodayTurns(): boolean
+  {
+    if(window.location.href.includes('today-turns'))
+      return true;
+
+    return false;
+  }
 }

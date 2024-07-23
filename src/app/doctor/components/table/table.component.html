@@ -1,9 +1,12 @@
+<app-back-icon></app-back-icon>
+
 <div class="container">
 
   <div class="table">
 
     <div class="header">
-      <span>ردیف</span>
+      <span class="number">ردیف</span>
+      <span *ngIf="isTodayTurns()">نوبت</span>
       <span>نام و نام خانوادگی</span>
       <span>تاریخ مراجعه</span>
       <span>ساعت مراجعه</span>
@@ -15,7 +18,12 @@
       <div class="body">
   
         <div class="row">
-          <span>1</span>
+          <span class="number">1</span>
+          <div class="turn-buttons" *ngIf="isTodayTurns()">
+            <button class="accept">پذیرش</button>
+            <button class="waiting">انتظار</button>
+            <button class="reject">کنسل</button>
+          </div>
           <span>امیر حسین ستاری</span>
           <span>29 بهمن 1402</span>
           <span>18:00</span>
@@ -23,7 +31,12 @@
         </div>
 
         <div class="row">
-          <span>1</span>
+          <span class="number">1</span>
+          <div class="turn-buttons" *ngIf="isTodayTurns()">
+            <button class="accept">پذیرش</button>
+            <button class="waiting">انتظار</button>
+            <button class="reject">کنسل</button>
+          </div>
           <span>امیر حسین ستاری</span>
           <span>29 بهمن 1402</span>
           <span>18:00</span>
@@ -31,7 +44,12 @@
         </div>
 
         <div class="row">
-          <span>1</span>
+          <span class="number">1</span>
+          <div class="turn-buttons" *ngIf="isTodayTurns()">
+            <button class="accept">پذیرش</button>
+            <button class="waiting">انتظار</button>
+            <button class="reject">کنسل</button>
+          </div>
           <span>امیر حسین ستاری</span>
           <span>29 بهمن 1402</span>
           <span>18:00</span>
@@ -39,7 +57,12 @@
         </div>
 
         <div class="row">
-          <span>1</span>
+          <span class="number">1</span>
+          <div class="turn-buttons" *ngIf="isTodayTurns()">
+            <button class="accept">پذیرش</button>
+            <button class="waiting">انتظار</button>
+            <button class="reject">کنسل</button>
+          </div>
           <span>امیر حسین ستاری</span>
           <span>29 بهمن 1402</span>
           <span>18:00</span>
@@ -47,7 +70,12 @@
         </div>
   
         <div class="row">
-          <span>1</span>
+          <span class="number">1</span>
+          <div class="turn-buttons" *ngIf="isTodayTurns()">
+            <button class="accept">پذیرش</button>
+            <button class="waiting">انتظار</button>
+            <button class="reject">کنسل</button>
+          </div>
           <span>امیر حسین ستاری</span>
           <span>29 بهمن 1402</span>
           <span>18:00</span>
@@ -55,7 +83,12 @@
         </div>
   
         <div class="row">
-          <span>2</span>
+          <span class="number">2</span>
+          <div class="turn-buttons" *ngIf="isTodayTurns()">
+            <button class="accept">پذیرش</button>
+            <button class="waiting">انتظار</button>
+            <button class="reject">کنسل</button>
+          </div>
           <span>امیر حسین ستاری</span>
           <span>29 بهمن 1402</span>
           <span>18:00</span>
@@ -63,7 +96,12 @@
         </div>
   
         <div class="row">
-          <span>3</span>
+          <span class="number">3</span>
+          <div class="turn-buttons" *ngIf="isTodayTurns()">
+            <button class="accept">پذیرش</button>
+            <button class="waiting">انتظار</button>
+            <button class="reject">کنسل</button>
+          </div>
           <span>امیر حسین ستاری</span>
           <span>29 بهمن 1402</span>
           <span>18:00</span>
@@ -71,7 +109,12 @@
         </div>
   
         <div class="row">
-          <span>3</span>
+          <span class="number">3</span>
+          <div class="turn-buttons" *ngIf="isTodayTurns()">
+            <button class="accept">پذیرش</button>
+            <button class="waiting">انتظار</button>
+            <button class="reject">کنسل</button>
+          </div>
           <span>امیر حسین ستاری</span>
           <span>29 بهمن 1402</span>
           <span>18:00</span>
@@ -85,60 +128,3 @@
   </div>
 
 </div>
-
-
-
-<!-- <app-export-table-menu></app-export-table-menu> -->
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>ردیف</th>
-      <th>نام و نام خانوادگی</th>
-      <th>کدملی</th>
-      <th>شماره همراه</th>
-      <th>تاریخ و ساعت مراجعه</th>
-      <th>پرداخت</th>
-      <th>مبلغ پرداخت</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>رادمان بیگدلی</td>
-      <td>4271700721</td>
-      <td>09120424373</td>
-      <td>22:45 -- 1402/06/6</td>
-      <td>نقدی</td>
-      <td>155.000</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>سید علیرضا موسوی</td>
-      <td>4271700721</td>
-      <td>09120424373</td>
-      <td>22:45 -- 1402/06/6</td>
-      <td>درگاه</td>
-      <td>88.000</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>سید علیرضا موسوی</td>
-      <td>4271700721</td>
-      <td>09120424373</td>
-      <td>22:45 -- 1402/06/6</td>
-      <td>درگاه</td>
-      <td>88.000</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>سید علیرضا موسوی</td>
-      <td>4271700721</td>
-      <td>09120424373</td>
-      <td>22:45 -- 1402/06/6</td>
-      <td>درگاه</td>
-      <td>88.000</td>
-    </tr>
-  </tbody>
-</table> -->

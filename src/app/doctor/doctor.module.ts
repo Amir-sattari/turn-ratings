@@ -42,7 +42,7 @@ import { SetTurnsComponent } from './components/set-turns/set-turns.component';
     NotFoundComponent,
     CreateTurnComponent,
     TurnPriceComponent,
-    SetTurnsComponent
+    SetTurnsComponent,
   ],
   imports: [
     CommonModule,
