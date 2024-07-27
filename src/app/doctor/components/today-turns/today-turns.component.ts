@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class TodayTurnsComponent {
 
+  public activeItem: string = 'waiting';
+
+  public setActiveItem(item: string): void
+  {
+    this.activeItem = item;
+  }
 }
