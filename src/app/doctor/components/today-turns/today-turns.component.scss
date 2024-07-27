@@ -11,20 +11,20 @@
 }
 
 .waiting {
-    @apply p-2 rounded-lg text-amber-500 max-w-52 w-full text-center cursor-pointer;
+    @apply p-2 rounded-lg text-amber-500 max-w-52 w-full text-center cursor-pointer select-none;
     border: 2px solid #E3E3E3;
     transition: all 200ms ease;
 }
 
 .accepted {
-    @apply p-2 rounded-lg text-center max-w-52 w-full cursor-pointer;
+    @apply p-2 rounded-lg text-center max-w-52 w-full cursor-pointer select-none;
     border: 2px solid #E3E3E3;
     color: #32D74B;
     transition: all 200ms ease;
 }
 
 .rejected {
-    @apply p-2 rounded-lg cursor-pointer max-w-52 w-full text-center;
+    @apply p-2 rounded-lg cursor-pointer max-w-52 w-full text-center select-none;
     border: 2px solid #E3E3E3;
     color: #FF453A;
     transition: all 200ms ease;
