@@ -71,11 +71,6 @@
   background-color: #32D74B;
 }
 
-.waiting {
-  @apply p-1 text-white rounded-lg w-14;
-  background-color: #FF9F0A;
-}
-
 .reject {
   @apply p-1 text-white rounded-lg w-14;
   background-color: #FF453A;
@@ -85,3 +80,10 @@
   display: none;
 }
 
+.accepted {
+  background-color: #abe5b3;
+}
+
+.rejected {
+  background-color: #ee746d;
+}

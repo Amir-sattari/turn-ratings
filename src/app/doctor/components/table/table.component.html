@@ -6,7 +6,7 @@
 
     <div class="header">
       <span class="number">ردیف</span>
-      <span *ngIf="isTodayTurns()">نوبت</span>
+      <span *ngIf="showTurnButtons">نوبت</span>
       <span>نام و نام خانوادگی</span>
       <span>تاریخ مراجعه</span>
       <span>ساعت مراجعه</span>
@@ -16,111 +16,21 @@
     <div class="w-full overflow-auto">
 
       <div class="body">
-  
-        <div class="row">
-          <span class="number">1</span>
-          <div class="turn-buttons" *ngIf="isTodayTurns()">
-            <button class="accept">پذیرش</button>
-            <button class="waiting">انتظار</button>
-            <button class="reject">کنسل</button>
-          </div>
-          <span>امیر حسین ستاری</span>
-          <span>29 بهمن 1402</span>
-          <span>18:00</span>
-          <span>نقدی</span>
-        </div>
 
-        <div class="row">
-          <span class="number">1</span>
-          <div class="turn-buttons" *ngIf="isTodayTurns()">
-            <button class="accept">پذیرش</button>
-            <button class="waiting">انتظار</button>
-            <button class="reject">کنسل</button>
+        @for (row of count; track $index) {
+          <div class="row" [class.accepted]="row.isAccepted" [class.rejected]="row.isRejected">
+            <span class="number">{{ row.id }}</span>
+            <div class="turn-buttons" *ngIf="showTurnButtons">
+              <button class="accept" (click)="accepted(row, row.id)" >پذیرش</button>
+              <button class="reject" (click)="rejected(row, row.id )">کنسل</button>
+            </div>
+           <span>{{ row.name }}</span>
+            <span>{{ row.date }}</span>
+            <span>{{ row.time }}</span>
+            <span>نقدی</span>
           </div>
-          <span>امیر حسین ستاری</span>
-          <span>29 بهمن 1402</span>
-          <span>18:00</span>
-          <span>نقدی</span>
-        </div>
+        }
 
-        <div class="row">
-          <span class="number">1</span>
-          <div class="turn-buttons" *ngIf="isTodayTurns()">
-            <button class="accept">پذیرش</button>
-            <button class="waiting">انتظار</button>
-            <button class="reject">کنسل</button>
-          </div>
-          <span>امیر حسین ستاری</span>
-          <span>29 بهمن 1402</span>
-          <span>18:00</span>
-          <span>نقدی</span>
-        </div>
-
-        <div class="row">
-          <span class="number">1</span>
-          <div class="turn-buttons" *ngIf="isTodayTurns()">
-            <button class="accept">پذیرش</button>
-            <button class="waiting">انتظار</button>
-            <button class="reject">کنسل</button>
-          </div>
-          <span>امیر حسین ستاری</span>
-          <span>29 بهمن 1402</span>
-          <span>18:00</span>
-          <span>نقدی</span>
-        </div>
-  
-        <div class="row">
-          <span class="number">1</span>
-          <div class="turn-buttons" *ngIf="isTodayTurns()">
-            <button class="accept">پذیرش</button>
-            <button class="waiting">انتظار</button>
-            <button class="reject">کنسل</button>
-          </div>
-          <span>امیر حسین ستاری</span>
-          <span>29 بهمن 1402</span>
-          <span>18:00</span>
-          <span>نقدی</span>
-        </div>
-  
-        <div class="row">
-          <span class="number">2</span>
-          <div class="turn-buttons" *ngIf="isTodayTurns()">
-            <button class="accept">پذیرش</button>
-            <button class="waiting">انتظار</button>
-            <button class="reject">کنسل</button>
-          </div>
-          <span>امیر حسین ستاری</span>
-          <span>29 بهمن 1402</span>
-          <span>18:00</span>
-          <span>نقدی</span>
-        </div>
-  
-        <div class="row">
-          <span class="number">3</span>
-          <div class="turn-buttons" *ngIf="isTodayTurns()">
-            <button class="accept">پذیرش</button>
-            <button class="waiting">انتظار</button>
-            <button class="reject">کنسل</button>
-          </div>
-          <span>امیر حسین ستاری</span>
-          <span>29 بهمن 1402</span>
-          <span>18:00</span>
-          <span>نقدی</span>
-        </div>
-  
-        <div class="row">
-          <span class="number">3</span>
-          <div class="turn-buttons" *ngIf="isTodayTurns()">
-            <button class="accept">پذیرش</button>
-            <button class="waiting">انتظار</button>
-            <button class="reject">کنسل</button>
-          </div>
-          <span>امیر حسین ستاری</span>
-          <span>29 بهمن 1402</span>
-          <span>18:00</span>
-          <span>نقدی</span>
-        </div>
-  
       </div>
 
     </div>
