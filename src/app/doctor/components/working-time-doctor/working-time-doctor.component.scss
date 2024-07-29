@@ -1,0 +1,49 @@
+:host {
+    @apply flex justify-center items-center w-full h-full;
+  }
+  
+  .container {
+    @apply flex justify-center items-center w-full;
+  }
+  
+  .table {
+    @apply flex flex-col justify-center items-center w-full gap-4;
+    height: 400px;
+  }
+  
+  .header {
+    @apply flex justify-between items-center p-4 w-full;
+    background-color: #E3E3E3;
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+  
+  .header span {
+    @apply flex justify-center items-center flex-1;
+  }
+  
+  .body {
+    @apply flex flex-col justify-center items-center w-full gap-1;
+  }
+  
+  .row {
+    @apply flex justify-between items-center w-full p-3;
+    background-color: #E3E3E3;
+  }
+  
+  .row span {
+    @apply flex justify-center items-center flex-1;
+  }
+  
+  .row:last-child {
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+  
+  // .footer {
+  //   @apply w-full p-3;
+  //   border-radius: 0 0 1.5rem 1.5rem;
+  //   background-color: #E3E3E3;
+  // }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }

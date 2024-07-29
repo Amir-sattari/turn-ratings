@@ -1,83 +1,17 @@
 <app-back-icon></app-back-icon>
 
 <div class="container">
-
-    <div class="row">
-         
-        <div class="title">
-            <span>شنبه</span>
-        </div>
-
-        <div class="time">
-            <app-turn-box></app-turn-box>
-        </div>
-
-    </div>
-    <div class="row">
-         
-        <div class="title">
-            <span>شنبه</span>
-        </div>
-
-        <div class="time">
-            <app-turn-box></app-turn-box>
-        </div>
-
-    </div>
-    <div class="row">
-         
-        <div class="title">
-            <span>شنبه</span>
-        </div>
-
-        <div class="time">
-            <app-turn-box></app-turn-box>
-        </div>
-
-    </div>
-    <div class="row">
-         
-        <div class="title">
-            <span>شنبه</span>
-        </div>
-
-        <div class="time">
-            <app-turn-box></app-turn-box>
-        </div>
-
-    </div>
-    <div class="row">
-         
-        <div class="title">
-            <span>شنبه</span>
-        </div>
-
-        <div class="time">
-            <app-turn-box></app-turn-box>
-        </div>
-
-    </div>
-    <div class="row">
-         
-        <div class="title">
-            <span>شنبه</span>
-        </div>
-
-        <div class="time">
-            <app-turn-box></app-turn-box>
-        </div>
-
-    </div>
-    <div class="row">
-         
-        <div class="title">
-            <span>شنبه</span>
-        </div>
-
-        <div class="time">
-            <app-turn-box></app-turn-box>
-        </div>
-
+  <div class="row" *ngFor="let day of weekDays">
+    <div class="title">
+      <span>{{ day.dayTitle }}</span>
     </div>
 
+    <div class="time time-box-container">
+      <div
+        *ngFor="let timeBox of timeBoxes; let i = index"
+        class="box-time fade-enter">
+        <app-turn-box [timeBox]="timeBox" (delete)="onDelete($event)" class="mr-2"></app-turn-box>
+      </div>
+    </div>
+  </div>
 </div>

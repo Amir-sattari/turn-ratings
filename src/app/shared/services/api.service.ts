@@ -1,7 +1,8 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { IResponse } from "../../shared/models/response";
 import { Observable } from 'rxjs';
+import { StorageService } from '../../auth/services/local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,25 +11,38 @@ import { Observable } from 'rxjs';
 export class ApiService {
   ResponseInfo: IResponse = <IResponse>{};
   apiAddress: string = "http://188.34.206.214:88/api/v1/";
+  token: string | null;
 
-  constructor(private http: HttpClient) {}
-
-  get(url: string) {
-    return this.http.get<IResponse>(this.apiAddress + url);
+  constructor(private http: HttpClient, private storageService: StorageService) {
+    this.token = this.storageService.get('token');
   }
 
-  post(url: string, body: object) {
-    return this.http.post<IResponse>(this.apiAddress + url, body);
+  get(url: string): Observable<IResponse> {
+    const headers = new HttpHeaders({
+      "Authorization": `Bearer ${this.token}`
+    });
+
+    return this.http.get<IResponse>(this.apiAddress + url, { headers });
   }
 
-  delete(url: string) {
-    return this.http.delete(this.apiAddress + url);
+  post(url: string, body: object): Observable<IResponse> {
+    const headers = new HttpHeaders({
+      "Authorization": `Bearer ${this.token}`
+    });
+    return this.http.post<IResponse>(this.apiAddress + url, body, { headers });
   }
 
-  put(url: string, body: object) {
-    return this.http.put(this.apiAddress + url, body);
+  delete(url: string): Observable<void> {
+    const headers = new HttpHeaders({
+      "Authorization": `Bearer ${this.token}`
+    });
+    return this.http.delete<void>(this.apiAddress + url, { headers });
   }
 
-  
-
+  put(url: string, body: object): Observable<IResponse> {
+    const headers = new HttpHeaders({
+      "Authorization": `Bearer ${this.token}`
+    });
+    return this.http.put<IResponse>(this.apiAddress + url, body, { headers });
+  }
 }

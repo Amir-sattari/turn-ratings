@@ -21,6 +21,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CreateTurnComponent } from './components/create-turn/create-turn.component';
 import { TurnPriceComponent } from './components/turn-price/turn-price.component';
 import { SetTurnsComponent } from './components/set-turns/set-turns.component';
+import { WorkingTimeDoctorComponent } from './components/working-time-doctor/working-time-doctor.component';
+import { SetWorkingTimeDoctorComponent } from './components/set-working-time-doctor/set-working-time-doctor.component';
 
 
 @NgModule({
@@ -42,12 +44,14 @@ import { SetTurnsComponent } from './components/set-turns/set-turns.component';
     NotFoundComponent,
     CreateTurnComponent,
     TurnPriceComponent,
-    SetTurnsComponent
+    SetTurnsComponent,
+    WorkingTimeDoctorComponent,
+    SetWorkingTimeDoctorComponent
   ],
   imports: [
     CommonModule,
     DoctorRoutingModule,
-    SharedModule
+    SharedModule,
   ],
  
 })

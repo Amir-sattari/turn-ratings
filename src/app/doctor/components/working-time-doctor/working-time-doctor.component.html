@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="table">
+    <div class="header">
+      <span>ردیف</span>
+      <span>روز</span>
+      <span>تاریخ شروع</span>
+      <span>تاریخ پایان</span>
+    </div>
+    <div class="w-full overflow-auto" *ngFor="let item of MyWorkingTimes">
+      <div class="body">
+        <div class="row" *ngFor="let period of item.timePeriods">
+          <span>{{item.id}}</span>
+          <span>{{item.dayTitle | weekDayPipe}}</span>
+          <span>{{period.timeFrom | jalaliDateTimePipe}}</span>
+          <span>{{period.timeTo | jalaliDateTimePipe}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
