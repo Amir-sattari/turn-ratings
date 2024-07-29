@@ -37,7 +37,7 @@ import { RequestInterceptor } from './auth/interceptor/request.interceptor';
   ],
   providers: [
     provideClientHydration(),
-    { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true },
 
   ],
 

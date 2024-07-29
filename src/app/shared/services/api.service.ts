@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { IResponse } from "../../shared/models/response";
 import { Observable } from 'rxjs';
@@ -10,25 +10,42 @@ import { Observable } from 'rxjs';
 export class ApiService {
   ResponseInfo: IResponse = <IResponse>{};
   apiAddress: string = "http://188.34.206.214:88/api/v1/";
+  token = localStorage.getItem('token');
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   get(url: string) {
-    return this.http.get<IResponse>(this.apiAddress + url);
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    });
+
+    return this.http.get<IResponse>(this.apiAddress + url, {headers});
   }
 
   post(url: string, body: object) {
-    return this.http.post<IResponse>(this.apiAddress + url, body);
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    });
+
+    return this.http.post<IResponse>(this.apiAddress + url, body, {headers});
   }
 
   delete(url: string) {
-    return this.http.delete(this.apiAddress + url);
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    });
+
+    return this.http.delete(this.apiAddress + url, {headers});
   }
 
   put(url: string, body: object) {
-    return this.http.put(this.apiAddress + url, body);
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    });
+
+    return this.http.put(this.apiAddress + url, body, {headers});
   }
 
-  
+
 
 }

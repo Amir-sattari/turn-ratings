@@ -10,15 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
  
 
 import { SharedModule } from '../../app/shared/shared.module';
-import { ServicesComponent } from './services/services.component';
-import { ServiceComponent } from './service/service.component';
+import { SectionsComponent } from './sections/sections.component';
+import { SectionComponent } from './section/section.component';
 
 @NgModule({
   declarations: [
     SidebarComponent,
     UserContainerComponent,
-    ServicesComponent,
-    ServiceComponent,
+    SectionsComponent,
+    SectionComponent,
     
 
   ],
