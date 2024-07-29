@@ -15,6 +15,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { ErrorFieldComponent } from './components/error-field/error-field.component';
 import { ValidationPipe } from './pipes/validation.pipe';
 import { TurnBoxComponent } from './components/turn-box/turn-box.component';
+import { JalaliDateTimePipe } from './pipes/date-time.pipe';
+import { WeekDayPipe } from './pipes/weekday.pipe';
 
 
 // import { CalendarModule } from 'primeng/calendar';
@@ -34,7 +36,9 @@ import { TurnBoxComponent } from './components/turn-box/turn-box.component';
     LoadingComponent,
     ErrorFieldComponent,
     ValidationPipe,
-    TurnBoxComponent
+    TurnBoxComponent,
+    JalaliDateTimePipe,
+    WeekDayPipe,
   ],
 
   imports: [
@@ -61,6 +65,8 @@ import { TurnBoxComponent } from './components/turn-box/turn-box.component';
     ErrorFieldComponent,
     ValidationPipe,
     TurnBoxComponent,
+    JalaliDateTimePipe,
+    WeekDayPipe
   ],
  
 })

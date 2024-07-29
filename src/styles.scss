@@ -28,3 +28,16 @@ body {
   cursor: pointer;
   user-select: none;
 }
+
+/* width scroll */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Handle scroll */
+::-webkit-scrollbar-thumb {
+  background: #058aff;
+  border-radius: 50px;
+  padding: 0;
+  margin: 0;
+}

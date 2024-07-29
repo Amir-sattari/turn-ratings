@@ -1,9 +1,60 @@
-:host {
-  @apply flex justify-center items-center w-full;
-}
+
 
 input,
 label {
   margin: 0.4rem 0;
   border: none;
 }
+
+.box-time {
+  @apply  gap-3 flex flex-col;
+}
+
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.fade-enter {
+  animation: fadeIn 0.3s forwards;
+}
+
+.fade-leave {
+  animation: fadeOut 0.3s forwards;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 6px;
+  position: fixed;
+  margin-right: -62px;
+  margin-top: 0px;
+}
+// display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 10px;
+//     margin-right: -40px;
+//     margin-top: 52px;
