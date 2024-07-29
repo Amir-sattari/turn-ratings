@@ -1,0 +1,49 @@
+:host {
+    @apply flex justify-center items-center max-w-5xl w-full;
+}
+
+.container {
+    @apply flex flex-col justify-center items-center gap-12;
+}
+
+.divided-turns {
+    @apply flex justify-between items-center w-2/3 px-4;
+}
+
+.waiting {
+    @apply p-2 rounded-lg text-amber-500 max-w-52 w-full text-center cursor-pointer select-none;
+    border: 2px solid #E3E3E3;
+    transition: all 200ms ease;
+}
+
+.accepted {
+    @apply p-2 rounded-lg text-center max-w-52 w-full cursor-pointer select-none;
+    border: 2px solid #E3E3E3;
+    color: #32D74B;
+    transition: all 200ms ease;
+}
+
+.rejected {
+    @apply p-2 rounded-lg cursor-pointer max-w-52 w-full text-center select-none;
+    border: 2px solid #E3E3E3;
+    color: #FF453A;
+    transition: all 200ms ease;
+}
+
+.active-waiting {
+    border: none;
+    color: white;
+    background-color: #F59E0B;
+}
+
+.active-accepted {
+    border: none;
+    color: white;
+    background-color: #32D74B;
+}
+
+.active-rejected {
+    border: none;
+    color: white;
+    background-color: #FF453A;
+}
