@@ -17,3 +17,7 @@
     @apply flex justify-center items-center flex-wrap w-full gap-8
     overflow-auto h-96;
 }
+
+.title {
+    @apply text-xl font-bold;
+}

@@ -1,4 +1,5 @@
 export interface ISection {
     id: number,
-    title: string
+    title: string,
+    imageId: string,
 }

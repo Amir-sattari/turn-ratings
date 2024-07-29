@@ -1,0 +1,48 @@
+.container {
+    @apply w-1 bg-white relative;
+    height: 45rem;
+}
+
+.first-step {
+    @apply flex justify-center items-center gap-2;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    left: -6.35rem;
+}
+
+.second-step {
+    @apply flex flex-row-reverse justify-end items-center gap-2;
+    position: absolute;
+    top: 11rem;
+    right: -6.1rem;
+    width: 116px;
+}
+
+.third-step {
+    @apply flex justify-end items-center gap-2;
+    position: absolute;
+    bottom: 21rem;
+    right: -0.9rem;
+    width: 122px;
+}
+
+.fourth-step {
+    @apply flex flex-row-reverse justify-center items-center gap-2;
+    position: absolute;
+    bottom: 10rem;
+    right: -6.9rem;
+    width: 130px;
+}
+
+.fifth-step {
+    @apply flex justify-end items-center gap-2;
+    position: absolute;
+    bottom: 0;
+    right: -0.9rem;
+    width: 97px;
+}
+
+.number {
+    @apply flex justify-center items-center w-8 h-8 bg-white rounded-full;
+}

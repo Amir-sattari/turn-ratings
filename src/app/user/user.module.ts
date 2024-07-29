@@ -14,6 +14,7 @@ import { SectionsComponent } from './components/sections/sections.component';
 import { SectionComponent } from './components/section/section.component';
 import { DoctorsListComponent } from './components/doctors-list/doctors-list.component';
 import { DoctorInfoComponent } from './components/doctor-info/doctor-info.component';
+import { StepsComponent } from './components/steps/steps.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DoctorInfoComponent } from './components/doctor-info/doctor-info.compon
     SectionComponent,
     DoctorsListComponent,
     DoctorInfoComponent,
+    StepsComponent,
     
 
   ],

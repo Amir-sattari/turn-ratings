@@ -4,6 +4,7 @@ import { UserContainerComponent } from './components/user-container/user-contain
 import { SectionsComponent } from './components/sections/sections.component';
 import { DoctorsListComponent } from './components/doctors-list/doctors-list.component';
 import { DoctorInfoComponent } from './components/doctor-info/doctor-info.component';
+import { StepsComponent } from './components/steps/steps.component';
 
 
 const routes: Routes = [
@@ -12,8 +13,7 @@ const routes: Routes = [
     component: UserContainerComponent,
     children: [
       {path: 'sections', component: SectionsComponent},
-      {path: 'doctors-list', component: DoctorsListComponent},
-      {path: 'test', component: DoctorInfoComponent}
+      {path: 'doctors-list/:id', component: DoctorsListComponent},
     ],
   },
 ];
