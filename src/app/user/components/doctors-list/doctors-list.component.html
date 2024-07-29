@@ -1,0 +1,15 @@
+<app-back-icon></app-back-icon>
+
+<div class="container">
+
+    <div class="search">
+        <input type="text" placeholder="نام دکتر را وارد کنید">
+    </div>
+
+    <div class="body">
+        @for (item of count; track $index) {
+        <app-doctor-info [name]="'رامان'" [expertise]="'برنامه نویس ارشد'"></app-doctor-info>
+
+        }
+    </div>
+</div>

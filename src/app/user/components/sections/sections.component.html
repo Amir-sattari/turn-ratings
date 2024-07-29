@@ -2,9 +2,11 @@
 
 <div class="container">
 
+    <!-- <span class="title">لیست خدمات</span> -->
+
     <div class="content">
         @for (section of sections; track $index) {
-        <app-section [name]="'دندان پزشکی'"></app-section>
+        <app-section [name]="section.title"></app-section>
         }
     </div>
 

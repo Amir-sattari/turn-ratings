@@ -24,18 +24,10 @@ export class TableComponent {
 
   public accepted(row: any, selectedRowId: number): void {
     
-    let rowIndex = this.count.findIndex(x => x.id == selectedRowId);
-    this.count.splice(rowIndex, 1);
-    this.count.push(row);
-    row.isAccepted = true;
   }
 
   public rejected(row: any, selectedRowId: number): void {
 
-    let rowIndex = this.count.findIndex(x => x.id == selectedRowId);
-    this.count.splice(rowIndex, 1);
-    this.count.push(row);
-    row.isRejected = true;
   }
 
 

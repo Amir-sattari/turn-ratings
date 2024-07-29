@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ISection } from '../../shared/models/section';
-import { ApiService } from '../../shared/services/api.service';
+import { ApiService } from '../../../shared/services/api.service';
+import { ISection } from '../../../shared/models/section';
 
 @Component({
   selector: 'app-services',
