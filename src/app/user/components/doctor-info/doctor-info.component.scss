@@ -1,0 +1,47 @@
+.container {
+    @apply flex flex-col justify-center items-center gap-4 p-4 rounded-xl w-96;
+    border: 2px solid #409CFF;
+}
+
+.info {
+    @apply flex justify-start items-center gap-4 w-full;
+}
+
+.content {
+    @apply flex flex-col justify-center items-center gap-2;
+}
+
+.content span {
+    @apply flex justify-start items-center w-full;
+}
+
+.button-div {
+    @apply flex justify-start items-center w-full;
+
+    button {
+        border: 2px solid #409CFF;
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+        max-width: 120px;
+        width: 100%;
+    }
+}
+
+.name {
+    @apply font-bold;
+}
+
+.expertise {
+    @apply font-medium text-sm;
+}
+
+.img-div {
+    height: 88px;
+}
+
+img {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #409CFF;
+    border-radius: 100rem;
+}

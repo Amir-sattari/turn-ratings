@@ -2,23 +2,29 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { UserContainerComponent } from './user-container/user-container.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { UserContainerComponent } from './components/user-container/user-container.component';
 import { HttpClientModule } from '@angular/common/http'; 
 
 
  
 
 import { SharedModule } from '../../app/shared/shared.module';
-import { ServicesComponent } from './services/services.component';
-import { ServiceComponent } from './service/service.component';
+import { SectionsComponent } from './components/sections/sections.component';
+import { SectionComponent } from './components/section/section.component';
+import { DoctorsListComponent } from './components/doctors-list/doctors-list.component';
+import { DoctorInfoComponent } from './components/doctor-info/doctor-info.component';
+import { StepsComponent } from './components/steps/steps.component';
 
 @NgModule({
   declarations: [
     SidebarComponent,
     UserContainerComponent,
-    ServicesComponent,
-    ServiceComponent,
+    SectionsComponent,
+    SectionComponent,
+    DoctorsListComponent,
+    DoctorInfoComponent,
+    StepsComponent,
     
 
   ],

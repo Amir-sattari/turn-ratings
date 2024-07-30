@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserContainerComponent } from './user-container/user-container.component';
-import { ServicesComponent } from './services/services.component';
-import { ServiceComponent } from './service/service.component';
+import { UserContainerComponent } from './components/user-container/user-container.component';
+import { SectionsComponent } from './components/sections/sections.component';
+import { DoctorsListComponent } from './components/doctors-list/doctors-list.component';
+import { DoctorInfoComponent } from './components/doctor-info/doctor-info.component';
+import { StepsComponent } from './components/steps/steps.component';
 
 
 const routes: Routes = [
@@ -10,7 +12,8 @@ const routes: Routes = [
     path: '',
     component: UserContainerComponent,
     children: [
-      {path: 'services', component: ServiceComponent}
+      {path: 'sections', component: SectionsComponent},
+      {path: 'doctors-list/:id', component: DoctorsListComponent},
     ],
   },
 ];

@@ -1,0 +1,19 @@
+<app-back-icon></app-back-icon>
+
+<div class="container">
+
+    <!-- <div class="search">
+        <input type="text" placeholder="نام دکتر را وارد کنید">
+    </div> -->
+
+    <div class="title-div">
+        <span class="title">لیست دکتر های {{sectionTitle}}</span>
+    </div>
+
+    <div class="body">
+        @for (doctor of doctorInfo; track $index) {
+        <app-doctor-info [name]="doctor.firstName + ' ' + doctor.lastName" [expertise]="'برنامه نویس ارشد'"></app-doctor-info>
+
+        }
+    </div>
+</div>
