@@ -1,0 +1,46 @@
+:host {
+    @apply flex justify-center items-center h-full w-full;
+  }
+  
+  .container {
+    @apply flex flex-col justify-center items-center w-full;
+  }
+  
+  .row {
+    @apply flex justify-start items-center w-full gap-12 py-2;
+    border-bottom: 1px solid gray;
+  
+    max-height: 300px;
+   
+  }
+  
+  .row:last-child {
+    border-bottom: none;
+  }
+  
+  .title {
+    @apply text-xl w-20;
+  }
+  
+  .time {
+    @apply flex justify-center items-center;
+  }
+  
+  ::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #058aff;
+    border-radius: 50px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .time-box-container {
+    display: flex;
+    width: 28%;
+    align-items: center;
+    justify-content: center;
+  }
+  

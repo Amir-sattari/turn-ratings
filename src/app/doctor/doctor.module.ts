@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
 import { DoctorRoutingModule } from './doctor-routing.module';
 import { AddPatientComponent } from './components/add-patient/add-patient.component';
 import { ExportTableMenuComponent } from './components/export-table-menu/export-table-menu.component';
@@ -52,6 +52,8 @@ import { SetWorkingTimeDoctorComponent } from './components/set-working-time-doc
     CommonModule,
     DoctorRoutingModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
  
 })
