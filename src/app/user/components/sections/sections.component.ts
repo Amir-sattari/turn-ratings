@@ -11,7 +11,7 @@ export class SectionsComponent implements OnInit {
   sections: ISection[] = [];
   imageUrl: string = '';
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.getSections();
@@ -21,7 +21,9 @@ export class SectionsComponent implements OnInit {
     this.apiService.get('Section').subscribe(res => {
       this.sections = res.data;
       this.sections.forEach(section => {
-        if(section.imageId) {
+        if (!section.imageId) {
+          section.imageId = '../../../../assets/images/young-man-profile-vector-14770074 copy 2 (1).png';
+        } else {
           this.getImageUrl(section.imageId, section);
         }
       });
