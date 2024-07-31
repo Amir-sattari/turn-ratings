@@ -45,4 +45,13 @@ export class ApiService {
     });
     return this.http.put<IResponse>(this.apiAddress + url, body, { headers });
   }
+
+
+  getImage(url: string): Observable<Blob> {
+    const headers = new HttpHeaders({
+      "Authorization": `Bearer ${this.token}`
+    });
+    return this.http.get(this.apiAddress + url, { headers, responseType: 'blob' });
+  }
 }
+

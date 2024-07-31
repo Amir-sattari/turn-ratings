@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IDoctorInfo } from '../../../shared/models/doctor-info';
+import { IDoctorInfo } from '../../models/doctor-info';
 import { ApiService } from '../../../shared/services/api.service';
 import { ActivatedRoute } from '@angular/router';
-import { ISection } from '../../../shared/models/section';
+import { ISection } from '../../models/section';
 
 @Component({
   selector: 'app-doctor-list',

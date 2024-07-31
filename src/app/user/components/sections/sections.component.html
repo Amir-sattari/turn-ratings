@@ -1,13 +1,14 @@
 <app-back-icon></app-back-icon>
 
 <div class="container">
-
-    <!-- <span class="title">لیست خدمات</span> -->
-
-    <div class="content">
-        @for (section of sections; track $index) {
-        <app-section [name]="section.title" [routerLink]="['/user/doctors-list/' + section.id]"></app-section>
-        }
-    </div>
-
+  <span class="title">لیست خدمات</span>
+  <div class="content">
+    <ng-container *ngFor="let section of sections; trackBy: trackById">
+      <app-section 
+        [name]="section.title" 
+        [image]="section.imageId" 
+        [routerLink]="['/user/doctors-list/' + section.id]">
+      </app-section>
+    </ng-container>
+  </div>
 </div>
