@@ -51,6 +51,7 @@ export class ApiService {
     const headers = new HttpHeaders({
       "Authorization": `Bearer ${this.token}`
     });
+  
     return this.http.get(this.apiAddress + url, { headers, responseType: 'blob' });
   }
 }

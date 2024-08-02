@@ -9,7 +9,6 @@ import { ISection } from '../../models/section';
 })
 export class SectionsComponent implements OnInit {
   sections: ISection[] = [];
-  imageUrl: string = '';
 
   constructor(private apiService: ApiService) {}
 
