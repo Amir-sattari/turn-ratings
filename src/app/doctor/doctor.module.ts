@@ -24,6 +24,11 @@ import { SetTurnsComponent } from './components/set-turns/set-turns.component';
 import { WorkingTimeDoctorComponent } from './components/working-time-doctor/working-time-doctor.component';
 import { SetWorkingTimeDoctorComponent } from './components/set-working-time-doctor/set-working-time-doctor.component';
 
+import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -54,6 +59,8 @@ import { SetWorkingTimeDoctorComponent } from './components/set-working-time-doc
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
+    NgPersianDatepickerModule,
+    
   ],
  
 })

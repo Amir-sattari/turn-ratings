@@ -9,6 +9,8 @@ export class TButtonComponent {
 
   @Input() label: string = 'label';
   @Input() type: string = 'text';
+  @Input() disabled: boolean = false;
+
   
 
 }

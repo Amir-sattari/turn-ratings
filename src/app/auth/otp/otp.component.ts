@@ -77,7 +77,6 @@ export class OtpComponent implements OnInit {
   }
 
   private showError(message: string) {
-    // Implement your error handling logic here
     alert(message);
   }
 }

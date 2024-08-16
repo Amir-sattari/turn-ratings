@@ -1,6 +1,5 @@
-import { Component  } from '@angular/core';
+import { Component, EventEmitter, Output  } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { IActiveDate, IDatepickerTheme } from 'ng-persian-datepicker';
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -8,18 +7,15 @@ import { IActiveDate, IDatepickerTheme } from 'ng-persian-datepicker';
 })
 export class CalendarComponent {
 
-  
   products : any;
   dateValue = new FormControl();
- 
-  onSelect(event: IActiveDate): void {
-    const viaTimestampValue = new Date(event.timestamp);
-    const viaGregorianDate = new Date(event.gregorian);
+
+  @Output() selectedDate = new EventEmitter()
+  onDateSelect(event: any): void {
+    // const activeDate: IActiveDate = event.detail;
+    this.dateValue.setValue(event.shamsi);
+    this.selectedDate.emit(event.gregorian)
   }
-
-  date1: Date | undefined;
-
-  date2: Date | undefined;
-
-  date3: Date | undefined;
+  
+  
 }

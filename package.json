@@ -26,6 +26,7 @@
     "jalali-moment": "^3.3.11",
     "jalali-ts": "^2.0.5",
     "ng-persian-datepicker": "^8.0.1",
+    "ngx-toastr": "^19.0.0",
     "primeicons": "^7.0.0",
     "primeng": "^17.17.0",
     "rxjs": "~7.8.0",

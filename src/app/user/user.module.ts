@@ -7,7 +7,7 @@ import { UserContainerComponent } from './components/user-container/user-contain
 import { HttpClientModule } from '@angular/common/http'; 
 
 
- 
+
 
 import { SharedModule } from '../../app/shared/shared.module';
 import { SectionsComponent } from './components/sections/sections.component';
@@ -15,6 +15,7 @@ import { SectionComponent } from './components/section/section.component';
 import { DoctorsListComponent } from './components/doctors-list/doctors-list.component';
 import { DoctorInfoComponent } from './components/doctor-info/doctor-info.component';
 import { StepsComponent } from './components/steps/steps.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { StepsComponent } from './components/steps/steps.component';
     DoctorsListComponent,
     DoctorInfoComponent,
     StepsComponent,
+    HomePageComponent,
     
 
   ],
@@ -33,6 +35,11 @@ import { StepsComponent } from './components/steps/steps.component';
     UserRoutingModule,
     SharedModule,
     HttpClientModule
-  ]
+  ],
+  exports: [
+    SectionComponent,
+  ],
+
+  
 })
 export class UserModule { }

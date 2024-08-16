@@ -1,0 +1,20 @@
+.sidebar{
+    @apply flex flex-col items-center justify-between w-32 h-full bg-white rounded-l-3xl ;
+    // height: 46rem;
+  }
+  
+  .profile {
+    @apply mt-10; 
+  }
+  
+  .text-sidebar {
+    @apply cursor-pointer flex flex-col justify-center items-center flex-nowrap text-justify gap-10;
+  
+  }
+  .logout {
+    @apply mb-10 cursor-pointer;
+  }
+  
+  .active {
+    @apply text-orange-500;
+  }

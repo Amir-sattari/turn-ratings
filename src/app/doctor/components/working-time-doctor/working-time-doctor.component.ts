@@ -30,5 +30,3 @@ export class WorkingTimeDoctorComponent implements OnInit {
     );
   }
 }
-
-

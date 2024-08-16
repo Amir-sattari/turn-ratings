@@ -1,0 +1,26 @@
+<app-back-icon></app-back-icon>
+
+<div class="flex justify-center">
+  <span> اضافه کردن تخصص </span>
+</div>
+
+<div class="flex flex-col items-center flex-nowrap gap-6 w-72">
+  <app-loading *ngIf="loading"></app-loading>
+
+  <img *ngIf="!loading && imageUrl" [src]="imageUrl" alt="Uploaded Image" style="width: 100px; height: 100px;">
+
+  <br>
+
+  <app-t-input label="نام تخصص" [(value)]="title" type="text"></app-t-input>
+
+  <div class='file'>
+    <label for='input-file'>
+      <i class="material-icons">انتخاب فایل</i>  
+    </label>
+    <input id='input-file' type='file' (change)="onFileSelected($event)" />
+  </div>
+
+  <br>
+
+  <app-t-button class="mt-3" label=" ارسال " (click)="onSubmitAndNextStep()"></app-t-button>
+</div>

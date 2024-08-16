@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class TInputComponent {
   @Input() value: string = '';
   @Input() type: string = '';
-  @Input() lable: string = '';
+  @Input() label: string = '';
   @Input() name: string = '';
 
   @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();

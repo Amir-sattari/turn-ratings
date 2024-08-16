@@ -1,0 +1,13 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg fill="#ffffff" width="193px" height="193px" viewBox="-2.4 -2.4 28.80 28.80" id="edit-circle-alt" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line">
+<g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.5600000000000005,1.5600000000000005), scale(0.87)">
+<rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#ffffff" strokewidth="0"/>
+</g>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier">
+<path id="secondary" d="M20.83,10.24a8.5,8.5,0,0,0-1.22-3l-5.83,5.83L11,13,11,10.22l5.83-5.83a8.5,8.5,0,0,0-3-1.22,9,9,0,1,0,7.07,7.07Z" style="fill: #ffa200; stroke-width: 2;"/>
+<path id="primary" d="M13.78,13.05,11,13,11,10.22,16.67,4.5a2,2,0,0,1,2.83,0h0a2,2,0,0,1,0,2.83Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/>
+<path id="primary-2" data-name="primary" d="M21,12a9,9,0,1,1-9-9" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/>
+</g>
+</svg>

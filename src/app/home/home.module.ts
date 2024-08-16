@@ -5,15 +5,16 @@ import { HomeRoutingModule } from './home-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import { SharedModule } from '../shared/shared.module';
 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    LandingComponent
-  ],
+  declarations: [LandingComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
-  ]
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

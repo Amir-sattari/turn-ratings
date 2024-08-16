@@ -1,0 +1,60 @@
+.text-calendar {
+  display: flex;
+  margin: 50px;
+  gap: 10px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdaon {
+  width: 110%;
+  border: 2px solid #d1d5db;
+  padding: 9px;
+  border-radius: 10px;
+}
+
+.file {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file > input[type="file"] {
+  display: none;
+}
+
+.file > label {
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  outline: 0;
+  -webkit-user-select: none;
+  user-select: none;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-style: solid;
+  border-radius: 12px;
+  border-width: 2px;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 29%);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.file > label:hover {
+  border-color: #409cff;
+}
+
+.file > label:active {
+  background-color: hsl(0, 0%, 96%);
+}
+
+.file > label > i {
+  padding-right: 5px;
+}

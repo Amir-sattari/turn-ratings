@@ -1,0 +1,16 @@
+<div class="time-input">
+    <input type="text" [value]="selectedTime || '--:--'" (click)="toggleTimePicker()" readonly />
+    <div class="time-picker" *ngIf="showTimePicker">
+      <div class="time-picker-list">
+        <div *ngFor="let hour of hours" (click)="selectHour(hour)" [class.selected]="hour === selectedHour">
+          {{ hour }}
+        </div>
+      </div>
+      <div class="time-picker-list">
+        <div *ngFor="let minute of minutes" (click)="selectMinute(minute)" [class.selected]="minute === selectedMinute">
+          {{ minute }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,19 @@
+<app-back-icon></app-back-icon>
+
+<div class="flex flex-col items-center flex-nowrap gap-6 w-72">
+  <img src="../../../assets/images/young-man-profile-vector-14770074 copy 2 (1).png" alt="">
+
+  <br>
+
+  <app-t-input label="نام" [(value)]="firstName" type="text"></app-t-input>
+  <app-t-input label="نام خانوادگی" [(value)]="lastName" type="text"></app-t-input>
+  <app-t-input label="کد ملی" [(value)]="nationalCode" type="text"></app-t-input>
+  <app-t-input label="شماره همراه" [(value)]="phoneNumber" type="text"></app-t-input>
+
+  <select class="dropdaon" [(ngModel)]="selectedSectionId">
+    <option value="" disabled selected>لطفاً یک سکشن انتخاب کنید</option>
+    <option *ngFor="let section of sections" [value]="section.id">{{ section.title }}</option>
+  </select>
+
+  <app-t-button class="mt-3" label=" ارسال " (click)="onSubmitAndNextStep()"></app-t-button>
+</div>

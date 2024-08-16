@@ -10,7 +10,7 @@ import { StorageService } from '../../auth/services/local-storage.service';
 
 export class ApiService {
   ResponseInfo: IResponse = <IResponse>{};
-  apiAddress: string = "http://188.34.206.214:88/api/v1/";
+  apiAddress: string = "http://91.107.245.72:88/api/v1/";
   token: string | null;
 
   constructor(private http: HttpClient, private storageService: StorageService) {
@@ -46,13 +46,17 @@ export class ApiService {
     return this.http.put<IResponse>(this.apiAddress + url, body, { headers });
   }
 
+  uploadImage(formData: FormData): Observable<any> {
+    const headers = new HttpHeaders({
+      "Authorization": `Bearer ${this.token}`
+    });
+    return this.http.post(this.apiAddress + 'Files/Upload', formData, { headers });
+  }
 
   getImage(url: string): Observable<Blob> {
     const headers = new HttpHeaders({
       "Authorization": `Bearer ${this.token}`
     });
-  
     return this.http.get(this.apiAddress + url, { headers, responseType: 'blob' });
   }
 }
-

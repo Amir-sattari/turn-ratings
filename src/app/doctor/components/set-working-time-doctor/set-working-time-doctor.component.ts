@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../shared/services/api.service';
-import { IMyWorkingTimes, ISetMyWorkingTimes } from '../../models/myTimeWorking';
-import { ITimePeriod } from '../../models/myTimeWorking';
-import { IWeekDays } from '../../models/week-turn';   
+import { ISetMyWorkingTimes } from '../../models/myTimeWorking';
+import { IWeekDays } from '../../models/week-turn';
+import { FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-set-working-time-doctor',
@@ -10,67 +12,104 @@ import { IWeekDays } from '../../models/week-turn';
   styleUrls: ['./set-working-time-doctor.component.scss']
 })
 export class SetWorkingTimeDoctorComponent implements OnInit {
+
   weekDays: IWeekDays[] = [];
-  setTime: ITimePeriod[] = [];
-  selectedDayId: number | null = null;
-  timeFrom: string = '';
-  timeTo: string = '';
+  workingTimeForm: FormGroup;
 
-  constructor(private apiService: ApiService) {}
-
-  ngOnInit() {
-    this.fetchWeekDays();
+  constructor(
+    private apiService: ApiService,
+    private toastr: ToastrService
+  ) {
+    this.workingTimeForm = new FormGroup({
+      workingDays: new FormArray([]) 
+    });
+    this.addWorkingDay(); 
   }
 
-  fetchWeekDays() {
-    this.apiService.get('Week/GetWeekTitle').subscribe(
-      (response) => {
+  ngOnInit() {
+    this.getWeekDays();
+  }
+
+  get workingDays(): FormArray {
+    return this.workingTimeForm.get('workingDays') as FormArray;
+  }
+
+  addWorkingDay() {
+    const dayGroup = new FormGroup({
+      selectedDayId: new FormControl(null, Validators.required),
+      timeFrom: new FormControl('', Validators.required),
+      timeTo: new FormControl('', Validators.required),
+      selectedDate: new FormControl(null, Validators.required)
+    });
+    this.workingDays.push(dayGroup);
+  }
+
+  removeWorkingDay(index: number) {
+    this.workingDays.removeAt(index);
+  }
+
+  getWeekDays() {
+    this.apiService.get('Week/GetWeekTitle').subscribe({
+      next: (response) => {
         if (response.data) {
           this.weekDays = response.data;
         }
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching week days:', error);
+      },
+      complete: () => {
+        console.log('Request complete');
       }
-    );
+    });
   }
 
-  convertTimeToISO(time: string): string {
-    const now = new Date();
-    const [hours, minutes] = time.split(':');
-    now.setHours(parseInt(hours, 10));
-    now.setMinutes(parseInt(minutes, 10));
-    now.setSeconds(0, 0);
-    return now.toISOString();
+  onSelect(event: any, index: number): void {
+    if (event && event.gregorian) {
+      this.workingDays.at(index).patchValue({ selectedDate: new Date(event.gregorian) });
+    } else {
+      console.error('Invalid date selected');
+      this.toastr.error(' تاریخ نامعتبر انتخاب شده است ', 'خطا');
+    }
+  }
+
+  onStartTimeSelected(time: string, index: number) {
+    this.workingDays.at(index).patchValue({ timeFrom: time });
+  }
+
+  onEndTimeSelected(time: string, index: number) {
+    this.workingDays.at(index).patchValue({ timeTo: time });
   }
 
   submitWorkingTimes() {
-    if (this.selectedDayId !== null && this.timeFrom && this.timeTo) {
-      const workingTime: ISetMyWorkingTimes = {
-        dayId: this.selectedDayId,
+    if (this.workingTimeForm.valid) {
+      const workingTimes: ISetMyWorkingTimes[] = this.workingDays.value.map((day: any) => ({
+        dayId: day.selectedDayId,
         timePeriods: [
           {
-            timeFrom: this.convertTimeToISO(this.timeFrom),
-            timeTo: this.convertTimeToISO(this.timeTo)
+            timeFrom: `${new Date().toISOString().split('T')[0]}T${day.timeFrom}:00Z`,
+            timeTo: `${new Date().toISOString().split('T')[0]}T${day.timeTo}:00Z`
           }
         ]
-      };
+      }));
 
-      this.apiService.post('Provider/SetProviderWorkingTimes', [workingTime]).subscribe(
+      this.apiService.post('Provider/SetProviderWorkingTimes', workingTimes).subscribe(
         (response) => {
           console.log('Working times set successfully:', response);
+          this.toastr.success(' تایم کاری شما ثبت گردید ', 'عملیات موفق');
         },
-        (error) => {
+        (error: HttpErrorResponse) => {
           console.error('Error setting working times:', error);
+          const errorMessage = error.error?.message || 'An unknown error occurred';
+          this.toastr.error(errorMessage, 'Error', { timeOut: 10000 });
+          setTimeout(() => {
+            this.toastr.clear();
+          }, 5000);
         }
       );
     } else {
       console.error('All fields are required');
+      this.toastr.warning('لطفا تمامی فیلد ها را پر کنید', 'اخطار');
     }
   }
 }
-
-
-// [{dayId: "1", timePeriods: [{timeFrom: "07:42", timeTo: "23:46"}]}]
-
-// [{"dayId": 0,"timePeriods": [{"timeFrom": "2024-07-29T12:02:23.992Z","timeTo": "2024-07-29T12:02:23.993Z"}]}]

@@ -1,4 +1,3 @@
-<ng-persian-datepicker [uiHideAfterSelectDate]="false" [uiIsVisible]="true"  [uiHideOnOutsideClick]="false" [formControl]="dateValue" >
-    <input class="hidden" [formControl]="dateValue"/>
+<ng-persian-datepicker [formControl]="dateValue" (dateOnSelect)="onDateSelect($event)">
+  <input style="width: 100%; border: 2px solid #d1d5db; padding: 10px; border-radius: 10px;" type="text" [formControl]="dateValue" />
 </ng-persian-datepicker>
-  
