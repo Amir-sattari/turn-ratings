@@ -1,0 +1,13 @@
+.text-calendar {
+    display: flex;
+    margin: 50px;
+    gap: 10px;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+  }
+  
+  .hidden {
+    display: none;
+  }
+  

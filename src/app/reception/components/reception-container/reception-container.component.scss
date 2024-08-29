@@ -1,0 +1,27 @@
+.container-m {
+    @apply flex w-full h-full;
+  }
+  
+  .router-container {
+    @apply h-full bg-sky-500 px-4;
+    flex: 1;
+  }
+  .wrapper {
+    position: relative;
+    display: flex;
+    max-width: 80rem;
+    align-items: center;
+    border-radius: 1rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 1rem;
+    margin: 75px auto;
+    min-height: 768px;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  
+  :host {
+    @apply block h-full;
+  }
+  

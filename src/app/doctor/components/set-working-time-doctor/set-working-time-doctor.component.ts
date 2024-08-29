@@ -11,19 +11,20 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './set-working-time-doctor.component.html',
   styleUrls: ['./set-working-time-doctor.component.scss']
 })
+
 export class SetWorkingTimeDoctorComponent implements OnInit {
 
   weekDays: IWeekDays[] = [];
   workingTimeForm: FormGroup;
 
-  constructor(
-    private apiService: ApiService,
-    private toastr: ToastrService
-  ) {
+  constructor( private apiService: ApiService , private toastr: ToastrService ) {
+
     this.workingTimeForm = new FormGroup({
       workingDays: new FormArray([]) 
     });
-    this.addWorkingDay(); 
+
+    this.addWorkingDay();
+
   }
 
   ngOnInit() {
@@ -35,13 +36,18 @@ export class SetWorkingTimeDoctorComponent implements OnInit {
   }
 
   addWorkingDay() {
+
     const dayGroup = new FormGroup({
+
       selectedDayId: new FormControl(null, Validators.required),
       timeFrom: new FormControl('', Validators.required),
       timeTo: new FormControl('', Validators.required),
       selectedDate: new FormControl(null, Validators.required)
+
     });
+
     this.workingDays.push(dayGroup);
+
   }
 
   removeWorkingDay(index: number) {
@@ -82,6 +88,7 @@ export class SetWorkingTimeDoctorComponent implements OnInit {
   }
 
   submitWorkingTimes() {
+    
     if (this.workingTimeForm.valid) {
       const workingTimes: ISetMyWorkingTimes[] = this.workingDays.value.map((day: any) => ({
         dayId: day.selectedDayId,
@@ -106,10 +113,12 @@ export class SetWorkingTimeDoctorComponent implements OnInit {
             this.toastr.clear();
           }, 5000);
         }
-      );
-    } else {
+      );}
+
+     else {
       console.error('All fields are required');
       this.toastr.warning('لطفا تمامی فیلد ها را پر کنید', 'اخطار');
     }
+
   }
 }

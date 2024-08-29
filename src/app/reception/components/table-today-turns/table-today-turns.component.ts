@@ -1,16 +1,17 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrl: './table.component.scss'
+  selector: 'app-table-today-turns',
+  templateUrl: './table-today-turns.component.html',
+  styleUrls: ['./table-today-turns.component.scss']
 })
-export class TableComponent {
+export class TableTodayTurnsComponent {
+
   @Input() showTurnButtons: boolean = false;
   rowStatus!: 'accepted' | 'rejected';
 
   count = [
-    { id: 1, name: ' کامبیز ', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
+    { id: 1, name: 'کامبیز', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
     { id: 2, name: 'رادمان', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
     { id: 3, name: 'یاسین', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
     { id: 4, name: 'احمدرضا', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
@@ -23,12 +24,12 @@ export class TableComponent {
   ];
 
   public accepted(row: any, selectedRowId: number): void {
-    
+    row.isAccepted = true;
+    row.isRejected = false;
   }
 
   public rejected(row: any, selectedRowId: number): void {
-
+    row.isAccepted = false;
+    row.isRejected = true;
   }
-
-
 }

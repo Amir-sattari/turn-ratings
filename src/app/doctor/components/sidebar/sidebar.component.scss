@@ -1,19 +1,22 @@
-.sidebar{
-    @apply flex flex-col items-center justify-between w-44 h-full bg-white rounded-l-3xl;
+.sidebar {
+  @apply flex flex-col items-center justify-between w-44 h-full bg-white rounded-l-3xl;
 }
 
 .profile {
-    @apply mt-10; 
+  @apply mt-10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
 }
 
 .text-sidebar {
-    @apply cursor-pointer flex flex-col justify-center items-center flex-nowrap text-justify gap-10;
-
+  @apply cursor-pointer flex flex-col justify-center items-center flex-nowrap text-justify gap-10;
 }
 .logout {
-    @apply mb-10 cursor-pointer;
+  @apply mb-10 cursor-pointer;
 }
 
 .active {
-    border-bottom: 2px solid #409CFF;
+  border-bottom: 2px solid #409cff;
 }

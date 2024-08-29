@@ -4,15 +4,14 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { AdminContainerComponent } from './admin-container/admin-container.component';
-import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { AdminContainerComponent } from './components/admin-container/admin-container.component';
+import { HomeAdminComponent } from './components/home-admin/home-admin.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserModule } from '../user/user.module';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { AddProviderComponent } from './add-provider/add-provider.component';
-import { AddSpecialtyComponent } from './add-specialty/add-specialty.component';
-import { DeleteSpecialtyComponent } from './delete-specialty/delete-specialty.component';
-import { EditSpecialtyComponent } from './edit-specialty/edit-specialty.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AddProviderComponent } from './components/add-provider/add-provider.component';
+import { AddSpecialtyComponent } from './components/add-specialty/add-specialty.component';
+import { EditSpecialtyComponent } from './components/edit-specialty/edit-specialty.component';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { EditSpecialtyComponent } from './edit-specialty/edit-specialty.componen
     SidebarComponent,
     AddProviderComponent,
     AddSpecialtyComponent,
-    DeleteSpecialtyComponent,
     EditSpecialtyComponent,
     
   ],

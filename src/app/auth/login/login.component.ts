@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 // import { HotToastService } from '@ngneat/hot-toast';
 import { ApiService } from '../../../app/shared/services/api.service';
 import { IRole } from '../models/user';
+import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +19,11 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private router: Router
-  ) // private toast: HotToastService
+    private router: Router,
+    private userService: UserService ,
+    // private toast: HotToastService
+
+    )
   {}
 
   ngOnInit(): void {}
@@ -49,10 +53,8 @@ export class LoginComponent implements OnInit {
         this.loading = false;
         if (res.isSuccess && res.data.token) {
           localStorage.setItem('token', res.data.token);
-
+          this.userService.setUser(res.data);  
           this.checkRoles(res.data.roles);
-          // this.router.navigate(['']);
-          // this.toast.success('خوش آمدی');
         } else {
           this.showError('نام کاربری یا رمز عبور اشتباه است.');
         }
@@ -63,6 +65,8 @@ export class LoginComponent implements OnInit {
       },
     });
   }
+  
+
 
   checkRoles(roles: IRole[]) {
     roles.forEach((role) => {

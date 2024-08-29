@@ -13,7 +13,6 @@ import { SearchPatientComponent } from './components/search-patient/search-patie
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TableComponent } from './components/table/table.component';
 import { TableHeaderComponent } from './components/table-header/table-header.component';
-import { TodayTurnsComponent } from './components/today-turns/today-turns.component';
 import { DoctorContainerComponent } from './components/doctor-container/doctor-container.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { SharedModule } from '../shared/shared.module';
@@ -43,7 +42,6 @@ import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
     SidebarComponent,
     TableComponent,
     TableHeaderComponent,
-    TodayTurnsComponent,
     DoctorContainerComponent,
     UserProfileComponent,
     NotFoundComponent,

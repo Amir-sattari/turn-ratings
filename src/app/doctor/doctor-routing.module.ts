@@ -16,7 +16,6 @@ import { TurnPriceComponent } from './components/turn-price/turn-price.component
 import { SetTurnsComponent } from './components/set-turns/set-turns.component';
 import { WorkingTimeDoctorComponent } from './components/working-time-doctor/working-time-doctor.component';
 import { SetWorkingTimeDoctorComponent } from './components/set-working-time-doctor/set-working-time-doctor.component';
-import { TodayTurnsComponent } from './components/today-turns/today-turns.component';
 
 const routes: Routes = [
   {
@@ -39,7 +38,6 @@ const routes: Routes = [
       { path: 'set-turns', pathMatch: "full", component: SetTurnsComponent },
       { path: 'working-time-doctor', pathMatch: "full", component: WorkingTimeDoctorComponent },
       { path: 'set-working-time-doctor', pathMatch: "full", component: SetWorkingTimeDoctorComponent },
-      { path: 'today-turns', pathMatch: "full", component: TodayTurnsComponent },
 
       
     ],

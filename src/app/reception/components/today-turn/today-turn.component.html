@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="divided-turns">
+
+        <span class="waiting" (click)="setActiveItem('waiting')" [class.active-waiting]="activeItem == 'waiting'">
+            لیست انتظار
+        </span>
+
+        <span class="accepted" (click)="setActiveItem('accepted')" [class.active-accepted]="activeItem == 'accepted'">
+            پذیرش شده
+        </span>
+
+        <span class="rejected" (click)="setActiveItem('rejected')" [class.active-rejected]="activeItem == 'rejected'">
+            کنسل شده
+        </span>
+
+    </div>
+    <app-table-today-turns></app-table-today-turns>
+</div>
+
+
+
+
+
+

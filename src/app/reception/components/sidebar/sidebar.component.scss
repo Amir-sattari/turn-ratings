@@ -1,6 +1,5 @@
 .sidebar{
-    @apply flex flex-col items-center justify-between w-32 h-full bg-white rounded-l-3xl ;
-    // height: 46rem;
+    @apply flex flex-col items-center justify-between w-44 h-full bg-white rounded-l-3xl;
 }
 
 .profile {
@@ -20,5 +19,5 @@
 }
 
 .active {
-    @apply text-orange-500;
+    border-bottom: 2px solid #409CFF;
 }
