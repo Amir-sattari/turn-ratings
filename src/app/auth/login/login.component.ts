@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['doctor/']);
       }
       if (role.title == 'Admin') {
-        this.router.navigate(['admin/']);
+        this.router.navigate(['admin/home']);
       }
       if (role.title == 'Reception') {
         this.router.navigate(['reception/']);
@@ -82,9 +82,9 @@ export class LoginComponent implements OnInit {
       if (role.title == 'User') {
         this.router.navigate(['user/sections']);
       }
-      if (role.title == 'User' , 'Provider' , 'Admin', 'Reception') {
-        this.router.navigate(['admin/home']);
-      }
+      // if (role.title == 'User' , 'Provider' , 'Admin', 'Reception') {
+      //   this.router.navigate(['admin/home']);
+      // }
     });
   }
 }

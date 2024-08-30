@@ -6,7 +6,7 @@
 
         <div class="item" [routerLink]="['/admin/add-provider']">
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" style="color: rgb(34, 177, 238);">
                 arrow_back_ios
             </span>
 
@@ -18,9 +18,51 @@
         </div>
 
         
+        <div class="item" [routerLink]="['/admin/edit-provider']">
+
+            <span class="material-symbols-rounded" style="color: rgb(34, 177, 238);">
+                arrow_back_ios
+            </span>
+
+            <div class="name-icon">
+                <!-- <img src="../../../../assets/images/time-square-svgrepo-com.svg" alt=""> -->
+                <span> حذف یا ویرایش دکتر  </span>
+            </div>
+
+        </div>
+        
+        
+        <div class="item" [routerLink]="['/admin/add-reception']">
+
+            <span class="material-symbols-rounded" style="color: orange;">
+                arrow_back_ios
+            </span>
+
+            <div class="name-icon">
+                <!-- <img src="../../../../assets/images/time.png" alt=""> -->
+                <span> اضافه کردن منشی </span>
+            </div>
+
+        </div>
+
+        
+        <div class="item" [routerLink]="['/admin/edit-reception']">
+
+            <span class="material-symbols-rounded" style="color: orange;">
+                arrow_back_ios
+            </span>
+
+            <div class="name-icon">
+                <!-- <img src="../../../../assets/images/time-square-svgrepo-com.svg" alt=""> -->
+                <span> حذف یا ویرایش منشی  </span>
+            </div>
+
+        </div>
+
+        
         <div class="item" [routerLink]="['/admin/add-specialty']">
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" style="color: forestgreen;">
                 arrow_back_ios
             </span>
 
@@ -30,11 +72,10 @@
             </div>
 
         </div>
- 
 
         <div class="item" [routerLink]="['/admin/edit-specialty']">
 
-            <span class="material-symbols-rounded">
+            <span class="material-symbols-rounded" style="color: forestgreen;">
                 arrow_back_ios
             </span>
 
@@ -43,7 +84,18 @@
                 <span> حذف یا ویرایش تخصص </span>
             </div>
         </div>
+        
+        <div class="item" [routerLink]="['/admin/referrals']">
 
+            <span class="material-symbols-rounded">
+                arrow_back_ios
+            </span>
+
+            <div class="name-icon">
+                <!-- <img src="../../../../assets/images/time-square-svgrepo-com.svg" alt=""> -->
+                <span> مراجعات </span>
+            </div>
+        </div>
         
     </div>
 </div>

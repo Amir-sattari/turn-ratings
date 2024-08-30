@@ -43,7 +43,7 @@ export class AddProviderComponent implements OnInit {
       sectionId: this.selectedSectionId
     };
 
-    this.apiService.post('Reception/AddProvider', providerData).subscribe({
+    this.apiService.post('Admin/AddProvider', providerData).subscribe({
       next: (response) => {
         console.log('Provider added successfully', response);
       },
