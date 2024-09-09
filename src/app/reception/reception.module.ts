@@ -15,6 +15,12 @@ import { AddPatientComponent } from './components/add-patient/add-patient.compon
 import { TodayTurnComponent } from './components/today-turn/today-turn.component';
 import { ReceptionServicesComponent } from './components/reception-services/reception-services.component';
 import { PatientComponent } from './components/patient/patient.component';
+import { DoctorInfoComponent } from './components/doctor-info/doctor-info.component';
+import { DoctorListComponent } from './components/doctor-list/doctor-list.component';
+import { FainalizeReservationComponent } from './components/fainalize-reservation/fainalize-reservation.component';
+import { ReserveComponent } from './components/reserve/reserve.component';
+import { SectionComponent } from './components/section/section.component';
+import { SectionsComponent } from './components/sections/sections.component';
 
 
 @NgModule({
@@ -29,6 +35,12 @@ import { PatientComponent } from './components/patient/patient.component';
     TodayTurnComponent,
     ReceptionServicesComponent,
     PatientComponent,
+    DoctorInfoComponent,
+    DoctorListComponent,
+    FainalizeReservationComponent,
+    ReserveComponent,
+    SectionComponent,
+    SectionsComponent,
     
     
   ],
