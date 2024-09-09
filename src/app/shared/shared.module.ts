@@ -19,6 +19,9 @@ import { TimeInputComponent } from './components/time-input/time-input.component
 import { ModalComponent } from './components/modal/modal.component';
 import { TimePipe } from './pipes/time.pipe';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { UserDatePipePipe } from './pipes/user-date-pipe.pipe';
+import { UserTimePipePipe } from './pipes/user-time-pipe.pipe';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
@@ -39,6 +42,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     TimeInputComponent,
     ModalComponent,
     TimePipe,
+    UserDatePipePipe,
+    UserTimePipePipe,
+    NotFoundComponent,
   ],
 
   imports: [
@@ -66,7 +72,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     WeekDayPipe,
     TimeInputComponent,
     ModalComponent,
-    TimePipe
+    TimePipe,
+    UserDatePipePipe,
+    UserTimePipePipe,
+    NotFoundComponent
   ],
  
 })

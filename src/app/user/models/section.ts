@@ -3,7 +3,3 @@ export interface ISection {
     title: string,
     imageId: string,
 }
-
-
-
-

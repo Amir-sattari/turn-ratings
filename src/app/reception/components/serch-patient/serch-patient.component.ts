@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, switchMap, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { ApiService } from '../../../shared/services/api.service';
-import { IserchInfo } from '../../models/serch';
+import { Router } from '@angular/router';
+// import { IserchInfo } from '../../models/serch';
+
+
 
 @Component({
   selector: 'app-serch-patient',
@@ -11,38 +13,30 @@ import { IserchInfo } from '../../models/serch';
   styleUrls: ['./serch-patient.component.scss']
 })
 export class SerchPatientComponent implements OnInit {
-  searchControl = new FormControl();
-  serchInfo: IserchInfo[] = [];
+
+  nationalCode: string = ''; 
   noUserFound = false;
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
-  ngOnInit() {
-    this.searchControl.valueChanges.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap(value => {
-        if (value.trim() === '') {
-          this.serchInfo = [];
-          this.noUserFound = false;
-          return of(null);
-        }
-        return this.apiService.get(`Reception/GetUsers?search=${encodeURIComponent(value)}`).pipe(
-          catchError(() => of({ data: [] }))
-        );
-      })
+  ngOnInit() {}
+
+  onSearch(): void {
+    const inputValue = this.nationalCode.trim();
+
+    if (inputValue === '') {
+      this.noUserFound = false;
+      return;
+    }
+
+    this.apiService.get(`Reception/GetUsers?search=${encodeURIComponent(inputValue)}`).pipe(
+      catchError(() => of({ data: [] })) 
     ).subscribe({
       next: (response: any) => {
-        if (response && response.data) {
-          const searchTerm = this.searchControl.value.trim();
-          const exactMatches = response.data.filter((user: any) =>
-            user.firstName.startsWith(searchTerm)
-          );
-          const otherMatches = response.data.filter((user: any) =>
-            !user.firstName.startsWith(searchTerm)
-          );
-          this.serchInfo = [...exactMatches, ...otherMatches];
-          this.noUserFound = this.serchInfo.length === 0;
+        if (response && response.data && response.data.length > 0) {
+          this.router.navigate(['/reception/patient']);
+        } else {
+          this.router.navigate(['/reception/AddPatient'], { queryParams: { nationalCode: inputValue } });
         }
       },
       error: (err) => {
@@ -51,5 +45,52 @@ export class SerchPatientComponent implements OnInit {
       }
     });
   }
+
+  onKeyUp(event: KeyboardEvent): void {
+    if (event.key === 'Enter') {
+      this.onSearch();
+    }
+  }
 }
 
+
+
+
+  // serchInfo: IserchInfo[] = [];
+  // noUserFound = false;
+
+  // constructor(private apiService: ApiService) {}
+
+  // ngOnInit() {}
+
+  // onKeyUp(event: KeyboardEvent): void {
+  //   const inputValue = (event.target as HTMLInputElement).value.trim();
+
+  //   if (inputValue === '') {
+  //     this.serchInfo = [];
+  //     this.noUserFound = false;
+  //     return;
+  //   }
+
+  //   this.apiService.get(`Reception/GetUsers?search=${encodeURIComponent(inputValue)}`).pipe(
+  //     catchError(() => of({ data: [] }))
+  //   ).subscribe({
+  //     next: (response: any) => {
+  //       if (response && response.data) {
+  //         const filteredUsers = response.data.filter((user: any) => 
+  //           user.firstName.startsWith(inputValue) ||
+  //           user.lastName.startsWith(inputValue) ||
+  //           user.nationalCode.startsWith(inputValue) ||
+  //           user.phoneNumber.startsWith(inputValue)
+  //         );
+
+  //         this.serchInfo = filteredUsers;
+  //         this.noUserFound = this.serchInfo.length === 0;
+  //       }
+  //     },
+  //     error: (err) => {
+  //       console.error('Error during search', err);
+  //       this.noUserFound = true;
+  //     }
+  //   });
+  // }

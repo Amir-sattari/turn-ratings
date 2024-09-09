@@ -1,0 +1,40 @@
+<app-back-icon></app-back-icon>
+<div class="container">
+  <div class="serch-times">
+    <div>
+      <label> از تاریخ : </label>
+      <app-calendar (selectedDate)="onDateFromSelected($event)"></app-calendar>
+    </div>
+
+    <br>
+
+    <div>
+      <label> تا تاریخ : </label>
+      <app-calendar (selectedDate)="onDateToSelected($event)"></app-calendar>
+    </div>
+
+    <br><br>
+
+    <!-- <div class="text-calendar">
+      <input type="checkbox" id="reserve-free-slot" name="reserve-free-slot" value="yes">
+      <label for="reserve-free-slot">در صورت تکمیل بودن ظرفیت نوبت‌ها، نوبت آزاد را انتخاب کنید.</label><br>
+    </div> -->
+
+    <br>
+
+    <app-t-button class="flex justify-center" label="بعدی" (click)="onNextStep2()"></app-t-button>
+  </div>
+
+  <div class="box-time" *ngIf="availableTurns.length > 0" >
+    <h3>نوبت‌های موجود:</h3>
+    <div class="content" id="scrollarea">
+      <div *ngFor="let turn of availableTurns" 
+           (click)="turn.isReserved ? null : selectTurn(turn)">
+        <div class="content-box" [ngStyle]="{'background-color': turn.isReserved ? '#ff3a3a' : '#8aff5e', 'cursor': turn.isReserved ? 'not-allowed' : 'pointer' , 'color': turn.isReserved ? 'white' : 'black'}">
+          <p> تاریخ : {{ turn.date | userDatePipe }}</p>
+          <p> {{ turn.timeFrom | userTimePipe }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

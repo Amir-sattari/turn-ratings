@@ -7,6 +7,7 @@ import { ApiService } from '../../../shared/services/api.service';
   styleUrls: ['./add-specialty.component.scss']
 })
 export class AddSpecialtyComponent {
+
   loading: boolean = false;
   title: string = '';
   selectedFile: File | null = null;
@@ -79,4 +80,3 @@ export class AddSpecialtyComponent {
     });
   }
 }
-

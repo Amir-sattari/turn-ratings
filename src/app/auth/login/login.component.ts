@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private userService: UserService ,
     // private toast: HotToastService
-
-    )
-  {}
+){}
 
   ngOnInit(): void {}
 
@@ -65,7 +63,7 @@ export class LoginComponent implements OnInit {
       },
     });
   }
-  
+
 
 
   checkRoles(roles: IRole[]) {

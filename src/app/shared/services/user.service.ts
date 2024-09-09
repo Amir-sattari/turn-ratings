@@ -1,6 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
+import { IUserInfo } from '../../user/models/user-info';
 
 interface User {
   userId: number;
@@ -13,6 +14,8 @@ interface User {
   providedIn: 'root',
 })
 export class UserService {
+  private userInfo: IUserInfo | null = null;
+
   private userSubject = new BehaviorSubject<User | null>(null);
   user$ = this.userSubject.asObservable();
   private isBrowser: boolean;
@@ -44,5 +47,13 @@ export class UserService {
     if (this.isBrowser) {
       sessionStorage.removeItem('user');
     }
+  }
+
+  setUserInfo(userInfo: IUserInfo) {
+    this.userInfo = userInfo;
+  }
+
+  getUserInfo(): IUserInfo | null {
+    return this.userInfo;
   }
 }

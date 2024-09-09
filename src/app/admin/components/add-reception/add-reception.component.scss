@@ -1,0 +1,20 @@
+.text-calendar {
+    display: flex;
+    margin: 50px;
+    gap: 10px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .dropdaon {
+    width: 110%;
+    border: 2px solid #d1d5db;
+    padding: 9px;
+    border-radius: 10px;
+  }
+  

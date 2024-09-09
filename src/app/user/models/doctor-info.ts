@@ -8,5 +8,16 @@ export interface IDoctorInfo {
     bankCardNumber: string,
     image: string,
     credit: string,
-    roles: string
+    roles: string,
+    speciality: string
+}
+
+
+export interface IReceptionInfo {
+    id: number,
+    phoneNumber: string,
+    firstName: string,
+    lastName: string,
+    nationalCode: string,
+    image: string,
 }

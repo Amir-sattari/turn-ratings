@@ -14,6 +14,7 @@ import { TableTodayTurnsComponent } from './components/table-today-turns/table-t
 import { AddPatientComponent } from './components/add-patient/add-patient.component';
 import { TodayTurnComponent } from './components/today-turn/today-turn.component';
 import { ReceptionServicesComponent } from './components/reception-services/reception-services.component';
+import { PatientComponent } from './components/patient/patient.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ReceptionServicesComponent } from './components/reception-services/rece
     AddPatientComponent,
     TodayTurnComponent,
     ReceptionServicesComponent,
+    PatientComponent,
     
     
   ],

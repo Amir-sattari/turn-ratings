@@ -2,51 +2,41 @@ import { Component, OnInit } from '@angular/core';
 import { IDoctorInfo } from '../../models/doctor-info';
 import { ApiService } from '../../../shared/services/api.service';
 import { ActivatedRoute } from '@angular/router';
-import { ISection } from '../../models/section';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-doctor-list',
   templateUrl: './doctors-list.component.html',
-  styleUrl: './doctors-list.component.scss'
+  styleUrls: ['./doctors-list.component.scss']
 })
 export class DoctorsListComponent implements OnInit {
-
   doctorInfo: IDoctorInfo[] = [];
-  sections: ISection[] = [];
   sectionTitle: string = '';
 
   constructor(
     private apiService: ApiService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastr: ToastrService
   ){}
 
   ngOnInit(): void {
     this.getDoctorsInfo();
   }
 
-  private getDoctorsInfo(): void
-  {
+  private getDoctorsInfo(): void {
     this.route.params.subscribe(params => {
-      let id = params['id'];
-
-      this.apiService.get(`Reception/GetAllProvidersBySectionId/${id}`).subscribe(res => {
+      const id = params['id'];
+      this.apiService.get(`Reserver/GetAllProvidersBySectionId/${id}`).subscribe(res => {
         this.doctorInfo = res.data;
-      })
-    })
-  }
-
-  private getSections(): void
-  {
-    this.route.params.subscribe(params => {
-      let id = params['id'];
-
-      this.apiService.get('Section').subscribe(res => {
-        this.sections = res.data;
-
-        this.sections.forEach(section => {
-          this.sectionTitle = section.title;
-        })
-      })
-    })
+        if (this.doctorInfo.length > 0) {
+          this.sectionTitle = this.doctorInfo[0].speciality;
+        } else {
+          this.toastr.info('هیچ دکتری برای این تخصص یافت نشد');
+        }
+      }, error => {
+        this.toastr.error('خطا در دریافت اطلاعات دکترها');
+        console.error('Error doctor info:', error);
+      });
+    });
   }
 }

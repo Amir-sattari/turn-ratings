@@ -25,7 +25,7 @@ export class WorkingTimeDoctorComponent implements OnInit {
         }
       },
       (error) => {
-        console.error('Error fetching week days:', error);
+        console.error('Error week days:', error);
       }
     );
   }

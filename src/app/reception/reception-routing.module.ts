@@ -7,6 +7,7 @@ import { AddPatientComponent } from './components/add-patient/add-patient.compon
 import { TodayTurnComponent } from './components/today-turn/today-turn.component';
 import { PatientsComponent } from './components/patients/patients.component';
 import { ReceptionServicesComponent } from './components/reception-services/reception-services.component';
+import { PatientComponent } from './components/patient/patient.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'AddPatient', pathMatch: "full", component: AddPatientComponent },
       { path: 'patients', pathMatch: "full", component: PatientsComponent },
       { path: 'reception-services', pathMatch: "full", component: ReceptionServicesComponent },
+      { path: 'patient', pathMatch: "full", component: PatientComponent },
 
     ],
   },

@@ -29,7 +29,7 @@ export class AddProviderComponent implements OnInit {
         this.sections = res.data;
       },
       error: (error) => {
-        console.error('Error fetching sections', error);
+        console.error('Error  sections', error);
       }
     });
   }

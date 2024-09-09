@@ -1,0 +1,41 @@
+<app-back-icon></app-back-icon>
+
+<div class="user-profile" *ngIf="userInfo; else loading">
+    
+    <div class="user-image">
+
+        <ng-template #showImage>
+            <img class="img" [src]="userImageUrl" alt="User Image" />
+        </ng-template>
+
+        <div *ngIf="isLoadingImage; else showImage">
+            <app-loading></app-loading>   
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="user-info">
+
+        <p><strong> نام : </strong> {{ userInfo.firstName }}</p>
+        <p><strong> نام خانوادگی : </strong> {{ userInfo.lastName }}</p>
+        <p><strong> شماره همراه : </strong> {{ userInfo.phoneNumber }}</p>
+        <p><strong> کد ملی : </strong> {{ userInfo.nationalCode }}</p>
+        <p><strong> شماره کارت : </strong> {{ userInfo.bankCardNumber }}</p>
+        <p><strong> شماره شبا : </strong> {{ userInfo.ibanNumber }}</p>
+        <p><strong> کیف پول : </strong> {{ userInfo.credit }}</p>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <app-t-button label="ویرایش" (click)="goToEditPage()"></app-t-button>
+
+</div>
+
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>

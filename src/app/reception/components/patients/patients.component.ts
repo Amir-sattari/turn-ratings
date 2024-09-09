@@ -68,7 +68,7 @@ export class PatientsComponent implements OnInit {
         }
       },
       error: (err) => {
-        console.error('Error fetching all patients', err);
+        console.error('Error all patients', err);
         this.noPatientFound = true;
       }
     });

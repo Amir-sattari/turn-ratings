@@ -1,0 +1,20 @@
+<app-back-icon></app-back-icon>
+<div class="container">
+  <div class="selected-turns">
+    <div *ngFor="let turn of [selectedTurn]">
+      <div>{{ turn.date }} - {{ turn.timeFrom }} تا {{ turn.timeTo }}</div>
+    </div>
+  </div>
+
+  <div class="payment-info">
+    <label for="depositAmount">مبلغ پیش‌پرداخت</label>
+    <input id="depositAmount" type="text" [(ngModel)]="depositAmount" name="depositAmount">
+    <br>
+    <label for="reserveAmount">مبلغ رزرو</label>
+    <input id="reserveAmount" type="text" [(ngModel)]="reserveAmount" name="reserveAmount">
+  </div>
+
+  <br><br>
+
+  <button (click)="reserveTurn()">رزرو نهایی</button>
+</div>

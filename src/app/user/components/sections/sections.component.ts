@@ -21,11 +21,13 @@ export class SectionsComponent implements OnInit {
       this.sections = res.data;
       this.sections.forEach(section => {
         if (!section.imageId) {
-          section.imageId = '../../../../assets/images/young-man-profile-vector-14770074 copy 2 (1).png';
+          section.imageId = '../../../../assets/images/default-placeholder.png'; // تصویر پیش‌فرض
         } else {
           this.getImageUrl(section.imageId, section);
         }
       });
+    }, error => {
+      console.error('Error sections:', error);
     });
   }
 
@@ -33,10 +35,12 @@ export class SectionsComponent implements OnInit {
     return section.id;
   }
 
-  getImageUrl(imageId: string, section: ISection): void {
+  private getImageUrl(imageId: string, section: ISection): void {
     this.apiService.getImage(`Files/Download?id=${imageId}`).subscribe(res => {
       const blob = new Blob([res], { type: 'image/jpeg' });
       section.imageId = URL.createObjectURL(blob);
+    }, error => {
+      console.error('Error image:', error);
     });
   }
 }

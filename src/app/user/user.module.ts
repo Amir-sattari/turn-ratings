@@ -6,7 +6,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UserContainerComponent } from './components/user-container/user-container.component';
 import { HttpClientModule } from '@angular/common/http'; 
 
-
+import { FormsModule } from '@angular/forms';
 
 
 import { SharedModule } from '../../app/shared/shared.module';
@@ -15,7 +15,14 @@ import { SectionComponent } from './components/section/section.component';
 import { DoctorsListComponent } from './components/doctors-list/doctors-list.component';
 import { DoctorInfoComponent } from './components/doctor-info/doctor-info.component';
 import { StepsComponent } from './components/steps/steps.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { ReserveComponent } from './components/reserve/reserve.component';
+import { FinalizeReservationComponent } from './components/finalize-reservation/finalize-reservation.component';
+import { MyTurnsComponent } from './components/my-turns/my-turns.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { MyWithdrawComponent } from './components/my-withdraw/my-withdraw.component';
+import { ReferralsComponent } from './components/referrals/referrals.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +33,14 @@ import { HomePageComponent } from './home-page/home-page.component';
     DoctorsListComponent,
     DoctorInfoComponent,
     StepsComponent,
-    HomePageComponent,
+    ReserveComponent,
+    FinalizeReservationComponent,
+    MyTurnsComponent,
+    UserInfoComponent,
+    UserEditComponent,
+    MyWithdrawComponent,
+    ReferralsComponent,
+    
     
 
   ],
@@ -34,7 +48,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     CommonModule,
     UserRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   exports: [
     SectionComponent,

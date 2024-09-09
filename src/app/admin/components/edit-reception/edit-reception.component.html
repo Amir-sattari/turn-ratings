@@ -1,1 +1,99 @@
-<p>edit-reception works!</p>
+<app-back-icon></app-back-icon>
+
+<div *ngIf="!loading && !isEditing && !isDeleting" class="container">
+
+  <span class="title">لیست منشی ها</span>
+
+  <div class="content">
+
+    <ng-container *ngFor="let doctor of receptions; trackBy: trackById">
+
+      <app-section [name]="doctor.firstName + ' ' + doctor.lastName" [image]="doctor.image"></app-section>
+
+      <img style="width: 47px; height: auto; margin-right: -55px; margin-top: -96px; cursor: pointer; background-color: white;" src="../../../assets/images/edit-circle-alt-svgrepo-com (1).svg" alt="ویرایش" (click)="editDoctor(doctor.id)" />
+      <img style="width: 47px; height: auto; margin-right: -71px; margin-top: -14px; cursor: pointer; background-color: white; padding: 6px; border-radius: 10px;" src="../../../../assets/images/delete-svgrepo-com.svg" alt="حذف" (click)="deleteDoctor(doctor.id)" />
+
+    </ng-container>
+
+  </div>
+  
+</div>
+
+<!-- edit module -->
+
+<div *ngIf="isEditing" class="modal">
+
+  <div style="margin-top: -350px; margin-right: 500px; position: absolute;">
+
+    <button type="button" (click)="closeModal()">
+      <img style="width: 41px; height: auto; cursor: pointer; background-color: white; border-radius: 29px; margin-left: 60px; margin-top: 99px;" src="../../../assets/images/delete-svgrepo-com.svg" alt="" />
+    </button>
+
+  </div>
+
+  <h2 style="position: absolute; margin-top: -261px; font-size: larger; font-weight: 700;">
+    ویرایش دکتر
+  </h2>
+
+  <form [formGroup]="editForm" (ngSubmit)="saveDoctorChanges()">
+
+    <div style="display: flex; flex-direction: row; justify-content: center; gap: 19px; margin-right: -80px; margin-top: -45px; position: absolute;">
+
+      <label for="firstName">نام :</label>
+      <input style="border: none; border-bottom: 2px solid red;" id="firstName" formControlName="firstName" type="text" />
+      <label for="lastName">نام خانوادگی :</label>
+      <input style="border: none; border-bottom: 2px solid red;" id="lastName" formControlName="lastName" type="text" />
+
+    </div>
+
+    <div style="display: flex; flex-direction: row; justify-content: center; gap: 19px; margin-right: -80px; margin-top: 20px; position: absolute;">
+
+      <label for="phoneNumber">شماره تماس :</label>
+      <input style="border: none; border-bottom: 2px solid red;" id="phoneNumber" formControlName="phoneNumber" type="text" />
+      <label for="nationalCode">کد ملی :</label>
+      <input style="border: none; border-bottom: 2px solid red;" id="nationalCode" formControlName="nationalCode" type="text" />
+      
+    </div>
+
+    <div style="position: absolute; margin-right: -214px; margin-top: -50px; display: flex; flex-direction: column; flex-wrap: nowrap; align-items: center; gap: 10px;">
+      <label>تصویر فعلی</label>
+      <img [src]="editForm.value.image" alt="Current Image" style="width: 100px; height: 100px; border-radius: 100%;" />
+    </div>
+
+    <div style="position: absolute; display: flex; margin-top: 104px; margin-right: -225px;">
+      <button type="submit" style="background-color: forestgreen; color: aliceblue; padding: 10px 197px; margin: 10px; border-radius: 15px;">
+        ذخیره
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- مودال حذف -->
+<div *ngIf="isDeleting" class="modal">
+  <div style="margin-top: -350px; margin-right: 500px; position: absolute;">
+    <button type="button" (click)="closeDeleteModal()">
+      <img style="width: 41px; height: auto; cursor: pointer; background-color: white; border-radius: 29px; margin-left: 60px; margin-top: 99px;"
+           src="../../../assets/images/delete-svgrepo-com.svg" alt="" />
+    </button>
+  </div>
+
+  <h2 style="position: absolute; margin-top: -261px; font-size: larger; font-weight: 700;">
+    حذف دکتر
+  </h2>
+
+  <div style="position: absolute; margin-top: -150px; display: flex; flex-direction: column; align-items: center;">
+    <label>نام و نام خانوادگی :</label>
+    <span>{{ deleteForm.value.firstName + ' ' + deleteForm.value.lastName }}</span>
+
+    <label>تصویر فعلی :</label>
+    <img [src]="deleteForm.value.image" alt="Current Image" style="width: 100px; height: 100px; border-radius: 100%;" />
+  </div>
+
+  <p style="position: absolute; margin-top: -50px;">آیا مطمئن هستید که می‌خواهید این دکتر را حذف کنید؟</p>
+
+  <div style="position: absolute; display: flex; margin-top: 104px; margin-right: -225px;">
+    <button (click)="confirmDoctorDelete()" style="background-color: red; color: aliceblue; padding: 10px 197px; margin: 10px; border-radius: 15px;">
+      حذف
+    </button>
+  </div>
+</div>

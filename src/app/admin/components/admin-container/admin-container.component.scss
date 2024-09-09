@@ -1,3 +1,6 @@
+:host {
+  @apply block h-full;
+}
 .container-m {
   @apply flex w-full h-full;
 }
@@ -6,12 +9,7 @@
   flex: 1;
 }
 .wrapper {
-  // @apply flex justify-center items-center max-w-7xl bg-white rounded-2xl p-4 relative;
   @apply flex justify-center items-center max-w-5xl bg-white rounded-2xl p-4 relative;
   margin: 75px auto;
   min-height: 46rem;
-}
-
-:host {
-  @apply block h-full;
 }

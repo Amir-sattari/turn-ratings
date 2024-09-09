@@ -1,0 +1,56 @@
+<app-back-icon></app-back-icon>
+
+<div *ngIf="userInfo">
+
+  <form (ngSubmit)="saveChanges()">
+
+    <div class="inputs">
+
+      <h1 style="font-weight: 600; font-size: 20px;"> ویرایش اطلاعات </h1>
+
+      <br>
+
+      <div class="relative float-label-input">
+        <label class="lable" for="firstName">نام</label>
+        <input class="input" id="firstName" [(ngModel)]="userInfo.firstName" name="firstName" type="text" placeholder="نام"/>
+      </div>
+
+  
+      <div class="relative float-label-input">
+        <label class="lable" for="lastName">نام خانوادگی</label>
+        <input class="input" id="lastName" [(ngModel)]="userInfo.lastName" name="lastName" type="text" placeholder="نام خانوادگی" />
+      </div>
+  
+  
+      <div class="relative float-label-input">
+        <label class="lable" for="nationalCode">کد ملی</label>
+        <input class="input" id="nationalCode" [(ngModel)]="userInfo.nationalCode" name="nationalCode" type="text" placeholder="کد ملی" />
+      </div>
+  
+  
+      <div class="relative float-label-input">
+        <label class="lable" for="ibanNumber">شماره شبا</label>
+        <input class="input" id="ibanNumber" [(ngModel)]="userInfo.ibanNumber" name="ibanNumber" type="text" placeholder="شماره شبا" />
+      </div>
+  
+  
+      <div class="relative float-label-input">
+        <label class="lable" for="bankCardNumber">شماره کارت</label>
+        <input class="input" id="bankCardNumber" [(ngModel)]="userInfo.bankCardNumber" name="bankCardNumber" type="text" placeholder="شماره کارت" />
+      </div>
+      
+    </div>
+
+
+    
+
+    <br>
+    <br>
+    <br>
+
+    <app-t-button type="submit" label="ذخیره تغییرات"></app-t-button>
+
+  </form>
+  
+</div>
+  

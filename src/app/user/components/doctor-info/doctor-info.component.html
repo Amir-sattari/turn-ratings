@@ -1,19 +1,15 @@
 <div class="container">
-
     <div class="info">
-
         <div class="img-div">
             <img src="../../../../assets/images/radman.jpg">
         </div>
-
         <div class="content">
             <span class="name">{{ name }}</span>
-            <span class="expertise">{{ expertise }}</span>
-            <span>***** 5 از 5</span>
         </div>
     </div>
-
     <div class="button-div">
-        <button>گرفتن نوبت</button>
+        <app-t-button label="گرفتن نوبت" [routerLink]="['/user/reserve/' + doctorId]"></app-t-button>
     </div>
 </div>
+
+

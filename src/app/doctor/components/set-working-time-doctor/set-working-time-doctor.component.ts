@@ -62,7 +62,7 @@ export class SetWorkingTimeDoctorComponent implements OnInit {
         }
       },
       error: (error) => {
-        console.error('Error fetching week days:', error);
+        console.error('Error week days:', error);
       },
       complete: () => {
         console.log('Request complete');
