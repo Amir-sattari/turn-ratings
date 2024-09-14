@@ -1,1 +1,12 @@
-<p>sections works!</p>
+<div class="container">
+    <span class="title"> لیست تخصص ها </span>
+    <div class="content">
+      <ng-container *ngFor="let section of sections; trackBy: trackById">
+        <app-section 
+          [name]="section.title" 
+          [image]="section.imageId" 
+          [routerLink]="['/reception/doctors-list/' + section.id]">
+        </app-section>
+      </ng-container>
+    </div>
+  </div>

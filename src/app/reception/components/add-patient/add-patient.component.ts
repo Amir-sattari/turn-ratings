@@ -2,13 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../shared/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../../../shared/services/user.service';
+import { IUser } from '../../models/user';
 
 @Component({
   selector: 'app-add-patient',
   templateUrl: './add-patient.component.html',
-  styleUrl: './add-patient.component.scss'
+  styleUrls: ['./add-patient.component.scss']
 })
+
+
 export class AddPatientComponent implements OnInit {
+  user : IUser [] = [];
   phoneNumber: string = '';
   nationalCode: string = '';
   firstName: string = '';
@@ -19,13 +24,20 @@ export class AddPatientComponent implements OnInit {
   showBackHome: boolean = false; 
   showSavePatient: boolean = true; 
 
-  constructor(private apiService: ApiService, private toastr: ToastrService, private router: Router ,  private route: ActivatedRoute) {}
+
+  constructor(
+    private apiService: ApiService,
+    private toastr: ToastrService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: any) => {
-    this.nationalCode = params['nationalCode'] || ''; 
-  });
-}
+      this.nationalCode = params['nationalCode'] || ''; 
+    });
+  }
 
   onSubmitAndNextStep() {
     const patientData = {
@@ -34,10 +46,19 @@ export class AddPatientComponent implements OnInit {
       nationalCode: this.nationalCode,
       phoneNumber: this.phoneNumber
     };
-
+  
     this.apiService.post('Reception/AddUser', patientData).subscribe({
       next: (response) => {
         console.log('Patient added successfully', response);
+        if (response.data && response.data.id) {
+          const user: IUser = {
+            userId: response.data.id,
+            firstName: '', 
+            lastName: '',
+            roles: []
+          };
+          this.userService.setUser(user);
+        }
         this.showAppointmentButton = true; 
         this.showSavePatient = false; 
         this.showBackHome = true; 
@@ -49,65 +70,15 @@ export class AddPatientComponent implements OnInit {
       }
     });
   }
+  
+  
+  
 
   onTakeAppointment() {
-    this.router.navigate(['/appointments']);
+    this.router.navigate(['/reception/sections']);
   }
+
   onBackHome() {
     this.router.navigate(['/reception']);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   phoneNumber: string = '';
-//   nationalCode: string = '';
-//   firstName: string = '';
-//   lastName: string = '';
-//   showCalendar: boolean = false;
-//   showModuleSavePatient: boolean = false;
-
-//   constructor(private apiService: ApiService) {}
-
-//   onNextStep1() {
-//     this.showCalendar = true;
-//   }
-
-//   onNextStep2() {
-//     this.showModuleSavePatient = true;
-//   }
-
-//   onSubmitAndNextStep() {
-//     const patientData = {
-//       firstName: this.firstName,
-//       lastName: this.lastName,
-//       nationalCode: this.nationalCode,
-//       phoneNumber: this.phoneNumber
-//     };
-
-//     this.apiService.post('Reception/AddUser', patientData).subscribe({
-//       next: (response) => {
-//         console.log('Patient added successfully', response);
-//         this.onNextStep1();
-//       },
-//       error: (error) => {
-//         console.error('There was an error!', error);
-//       }
-//     });
-//   }
-// }
-
-
-
-

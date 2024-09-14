@@ -8,6 +8,10 @@ import { TodayTurnComponent } from './components/today-turn/today-turn.component
 import { PatientsComponent } from './components/patients/patients.component';
 import { ReceptionServicesComponent } from './components/reception-services/reception-services.component';
 import { PatientComponent } from './components/patient/patient.component';
+import { SectionsComponent } from './components/sections/sections.component';
+import { DoctorListComponent } from './components/doctor-list/doctor-list.component';
+import { ReserveComponent } from './components/reserve/reserve.component';
+import { FainalizeReservationComponent } from './components/fainalize-reservation/fainalize-reservation.component';
 
 const routes: Routes = [
   {
@@ -15,13 +19,17 @@ const routes: Routes = [
     component: ReceptionContainerComponent,
     children: [
 
-      { path: '', pathMatch: "full", component: SerchPatientComponent },
+      { path: '', pathMatch: "full", component: PatientsComponent },
       { path: 'today-turns', pathMatch: "full", component: TodayTurnComponent },
-      { path: 'serch', pathMatch: "full", component: SerchPatientComponent },
+      // { path: 'serch', pathMatch: "full", component: SerchPatientComponent },
       { path: 'AddPatient', pathMatch: "full", component: AddPatientComponent },
       { path: 'patients', pathMatch: "full", component: PatientsComponent },
       { path: 'reception-services', pathMatch: "full", component: ReceptionServicesComponent },
       { path: 'patient', pathMatch: "full", component: PatientComponent },
+      { path: 'sections', pathMatch: "full", component: SectionsComponent },
+      { path: 'doctors-list/:id', pathMatch: "full", component: DoctorListComponent },
+      { path: 'reserve/:providerId', pathMatch: "full", component: ReserveComponent },
+      { path: 'finalize-reservation/:turnId', pathMatch: "full", component: FainalizeReservationComponent },
 
     ],
   },

@@ -1,1 +1,14 @@
-<p>doctor-list works!</p>
+<app-back-icon></app-back-icon>
+
+<div class="container">
+  <div class="title-div">
+    <span class="title">دکترهای تخصص {{ sectionTitle }}</span>
+  </div>
+
+  <div class="body">
+    <div *ngFor="let doctor of doctorInfo">
+      <app-doctor-info [name]="doctor.firstName + ' ' + doctor.lastName" [doctorId]="doctor.id">
+      </app-doctor-info>
+    </div>
+  </div>
+</div>

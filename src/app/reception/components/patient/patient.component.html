@@ -1,1 +1,40 @@
-<p>patient works!</p>
+<div class="container">
+  
+    <div *ngIf="noUserFound">کاربری یافت نشد</div>
+    
+    <div *ngIf="userInfo" class="user-profile">
+      <div class="user-image">
+        <ng-template #showImage>
+          <img class="img" [src]="userImageUrl" alt="User Image" />
+        </ng-template>
+        <div *ngIf="isLoadingImage; else showImage">
+          <app-loading></app-loading>
+        </div>
+      </div>
+  
+      <br>
+  
+      <div class="user-info">
+        <p><strong> نام : </strong> {{ userInfo.firstName }}</p>
+        <p><strong> نام خانوادگی : </strong> {{ userInfo.lastName }}</p>
+        <p><strong> شماره همراه : </strong> {{ userInfo.phoneNumber }}</p>
+        <p><strong> کد ملی : </strong> {{ userInfo.nationalCode }}</p>
+      </div>
+  
+      <br>
+      <br>
+      <br>
+  
+      <app-t-button label="گرفتن نوبت" (click)="goToReserveTurn()"></app-t-button>
+    </div>
+  
+    <ng-template #loading>
+      <div *ngIf="noUserFound">
+        <p>کاربری یافت نشد</p>
+      </div>
+      <div *ngIf="!noUserFound">
+        <app-loading></app-loading>
+      </div>
+    </ng-template>
+  </div>
+  

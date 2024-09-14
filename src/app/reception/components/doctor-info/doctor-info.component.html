@@ -1,1 +1,13 @@
-<p>doctor-info works!</p>
+<div class="container">
+    <div class="info">
+        <div class="img-div">
+            <img src="../../../../assets/images/radman.jpg">
+        </div>
+        <div class="content">
+            <span class="name">{{ name }}</span>
+        </div>
+    </div>
+    <div class="button-div">
+        <app-t-button label="گرفتن نوبت" [routerLink]="['/reception/reserve/' + doctorId]"></app-t-button>
+    </div>
+</div>

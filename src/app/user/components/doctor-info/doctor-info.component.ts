@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./doctor-info.component.scss']
 })
 export class DoctorInfoComponent {
-  @Input() name!: string;
+ @Input() name!: string;
   @Input() doctorId!: number;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {} 
 }

@@ -4,13 +4,13 @@
 
 .container {
     @apply flex flex-col justify-center items-center gap-8;
-    width: 50rem;
+    width: 60rem;
 }
 
 .search-div {
     @apply rounded-xl p-2 relative;
     border: 2px solid;
-    max-width: 700px;
+    max-width: 855px;
     width: 100%;
     transition: all 0.8s ease;
 
@@ -43,7 +43,7 @@
 
 .filters {
     @apply flex justify-between items-center rounded-xl select-none relative;
-    max-width: 740px;
+    max-width:890px;
     width: 100%;
     transition: all 0.8s ease;
     background-color: #E3E3E3;
