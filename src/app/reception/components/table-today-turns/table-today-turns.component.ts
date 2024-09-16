@@ -1,35 +1,69 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef} from '@angular/core';
+import { ApiService } from '../../../shared/services/api.service';
+import { ITodayTurns } from '../../models/user';
 
 @Component({
   selector: 'app-table-today-turns',
   templateUrl: './table-today-turns.component.html',
   styleUrls: ['./table-today-turns.component.scss']
 })
-export class TableTodayTurnsComponent {
+export class TableTodayTurnsComponent implements OnInit {
+  
+  @Input() showTurnButtons: boolean = true;
+  @Input() currentStatus: number = 0;    
+  ITodayTurns: ITodayTurns[] = [];
+  isLoading: boolean = false;
 
-  @Input() showTurnButtons: boolean = false;
-  rowStatus!: 'accepted' | 'rejected';
+  constructor(private apiService: ApiService, private cdRef: ChangeDetectorRef) {}
 
-  count = [
-    { id: 1, name: 'کامبیز', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-    { id: 2, name: 'رادمان', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-    { id: 3, name: 'یاسین', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-    { id: 4, name: 'احمدرضا', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-    { id: 5, name: 'محمد', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-    { id: 6, name: 'علی', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-    { id: 7, name: 'امیر', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-    { id: 8, name: 'پویا', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-    { id: 9, name: 'سعید', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-    { id: 10, name: 'اکبر', date: '12 بهمن 1403', time: '18:00', isAccepted: false, isRejected: false },
-  ];
-
-  public accepted(row: any, selectedRowId: number): void {
-    row.isAccepted = true;
-    row.isRejected = false;
+  ngOnInit(): void {
+    this.getTurns(this.currentStatus);
   }
 
-  public rejected(row: any, selectedRowId: number): void {
-    row.isAccepted = false;
-    row.isRejected = true;
+  public getTurns(status: number): void {
+    this.isLoading = true;
+
+    if (status === 1 || status === 2) {
+      this.getMultipleStatusTurns([1, 2]);
+    } else {
+      this.apiService.get(`Turn/GetTodayTurns?turnStatus=${status}`).subscribe(response => {
+        this.ITodayTurns = response.data;
+        this.isLoading = false;
+        this.cdRef.detectChanges();
+      });
+    }
+  }
+
+  private getMultipleStatusTurns(statuses: number[]): void {
+    const turnsList: ITodayTurns[] = [];
+
+    statuses.forEach((status, index) => {
+      this.apiService.get(`Turn/GetTodayTurns?turnStatus=${status}`).subscribe(response => {
+        turnsList.push(...response.data);
+
+        if (index === statuses.length - 1) {
+          this.ITodayTurns = turnsList;
+          this.isLoading = false;
+          this.cdRef.detectChanges();
+        }
+      });
+    });
+  }
+
+  public visited(row: ITodayTurns, selectedRowId: number): void {
+    this.apiService.post(`Reception/AcceptTurnForUser/${selectedRowId}`, {}).subscribe(() => {
+      this.removeTurnFromList(selectedRowId);
+    });
+  }
+
+  public Canceled(row: ITodayTurns, selectedRowId: number): void {
+    this.apiService.post(`Reception/CancelTurnForUser/${selectedRowId}`, {}).subscribe(() => {
+      this.removeTurnFromList(selectedRowId);
+    });
+  }
+
+  private removeTurnFromList(turnId: number): void {
+    this.ITodayTurns = this.ITodayTurns.filter(turn => turn.turnId !== turnId);
+    this.cdRef.detectChanges();
   }
 }

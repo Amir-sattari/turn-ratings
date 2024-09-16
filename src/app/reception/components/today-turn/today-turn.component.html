@@ -2,24 +2,20 @@
 
     <div class="divided-turns">
 
-        <span class="waiting" (click)="setActiveItem('waiting')" [class.active-waiting]="activeItem == 'waiting'">
-            لیست انتظار
+        <span class="active" (click)="setActiveItem('active')" [class.active-active]="activeItem == 'active'">
+            نوبت‌ امروز
         </span>
 
-        <span class="accepted" (click)="setActiveItem('accepted')" [class.active-accepted]="activeItem == 'accepted'">
-            پذیرش شده
+        <span class="visited" (click)="setActiveItem('visited')" [class.active-visited]="activeItem == 'visited'">
+            ویزیت شده 
         </span>
 
-        <span class="rejected" (click)="setActiveItem('rejected')" [class.active-rejected]="activeItem == 'rejected'">
+        <span class="Canceled" (click)="setActiveItem('Canceled')" [class.active-Canceled]="activeItem == 'Canceled'">
             کنسل شده
         </span>
 
     </div>
-    <app-table-today-turns></app-table-today-turns>
+
+    <app-table-today-turns #appTableTodayTurns></app-table-today-turns>
+
 </div>
-
-
-
-
-
-

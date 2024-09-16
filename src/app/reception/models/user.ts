@@ -17,3 +17,21 @@ export interface IUser {
     image: string;
     credit: string;
   }
+
+
+  
+  export interface ITodayTurns {
+    turnId: number ;
+    userId:number ;
+    phoneNumber: string ;
+    firstName: string ;
+    lastName: string ;
+    status: number ;
+    visitTime: string ;
+    depositAmount: string ;
+    reserveAmount: string ;
+    paymentCode:string ; 
+  }
+
+
+   

@@ -2,28 +2,32 @@
     <div class="table">
       <div class="header">
         <span class="number">ردیف</span>
-        <span *ngIf="showTurnButtons">نوبت</span>
+        <span *ngIf="showTurnButtons && currentStatus === 0">نوبت</span>
         <span>نام و نام خانوادگی</span>
         <span>تاریخ مراجعه</span>
         <span>ساعت مراجعه</span>
         <span>پرداخت</span>
       </div>
-  
-      <div class="w-full overflow-auto">
+      <div *ngIf="isLoading">
+        <app-loading></app-loading> 
+      </div>
+      <div class="w-full overflow-auto" *ngIf="!isLoading">
         <div class="body">
-          <div *ngFor="let row of count; let i = index" class="row" [class.accepted]="row.isAccepted" [class.rejected]="row.isRejected">
+          <div *ngFor="let row of ITodayTurns; let i = index" class="row" [class.accepted]="row.status === 3" [class.rejected]="row.status === 1" [class.rejected]="row.status === 2">
             <span class="number">{{ i + 1 }}</span>
-            <div class="turn-buttons" *ngIf="showTurnButtons">
-              <button class="accept" (click)="accepted(row, row.id)">پذیرش</button>
-              <button class="reject" (click)="rejected(row, row.id)">کنسل</button>
+            <div class="turn-buttons" *ngIf="showTurnButtons && currentStatus === 0" >
+              <button class="accept" (click)="visited(row, row.turnId)">پذیرش</button>
+              <button class="reject" (click)="Canceled(row, row.turnId)">کنسل</button>
             </div>
-            <span>{{ row.name }}</span>
-            <span>{{ row.date }}</span>
-            <span>{{ row.time }}</span>
-            <span>نقدی</span>
+            <span>{{ row.firstName }} {{ row.lastName }}</span>
+            <span>{{ row.visitTime | date: 'yyyy/MM/dd' }}</span>
+            <span>{{ row.visitTime | date: 'HH:mm' }}</span>
+            <span>{{ row.paymentCode }}</span>
           </div>
         </div>
       </div>
     </div>
+  <div *ngIf="ITodayTurns.length === 0 && !isLoading">
+    نوبتی برای نمایش وجود ندارد.
   </div>
-  
+</div>

@@ -7,43 +7,47 @@
 }
 
 .divided-turns {
-    @apply flex justify-between items-center w-2/3 px-4;
+    @apply flex justify-between items-center w-4/5 px-4;
 }
 
-.waiting {
-    @apply p-2 rounded-lg text-amber-500 max-w-52 w-full text-center cursor-pointer select-none;
+.visited {
+    @apply p-2 rounded-lg text-center max-w-52 w-full cursor-pointer select-none;
     border: 2px solid #e2e1e1;
+    color: #00c3ff;
     transition: all 200ms ease;
+    font-weight: 600
 }
 
-.accepted {
+.active {
     @apply p-2 rounded-lg text-center max-w-52 w-full cursor-pointer select-none;
     border: 2px solid #e2e1e1;
     color: #32D74B;
     transition: all 200ms ease;
+    font-weight: 600
 }
 
-.rejected {
+.Canceled {
     @apply p-2 rounded-lg cursor-pointer max-w-52 w-full text-center select-none;
     border: 2px solid #e2e1e1;
     color: #FF453A;
     transition: all 200ms ease;
+    font-weight: 600
 }
 
-.active-waiting {
+.active-visited {
     border: none;
     color: white;
-    background-color: #F59E0B;
+    background-color: #00c3ff ;
 }
 
-.active-accepted {
-    border: none;
-    color: white;
-    background-color: #32D74B;
-}
-
-.active-rejected {
+.active-Canceled {
     border: none;
     color: white;
     background-color: #FF453A;
+}
+
+.active-active {
+    border: none;
+    color: white;
+    background-color:  #32D74B;
 }
