@@ -6,7 +6,7 @@ import { NotFoundComponent } from '../shared/components/not-found/not-found.comp
 const routes: Routes = [
   { path: '', component: LandingComponent},
   { path: 'notfound', component: NotFoundComponent },   
-  { path: '**', redirectTo: '/notfound' } 
+  // { path: '**', redirectTo: '/notfound' } 
 ];
 
 @NgModule({

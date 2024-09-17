@@ -12,6 +12,7 @@ import { ReferralsComponent } from './components/referrals/referrals.component';
 import { NotFoundComponent } from '../shared/components/not-found/not-found.component';
 
 const routes: Routes = [
+  
   { path: '', component: AdminContainerComponent, children: [
 
       {path: 'home', component: HomeAdminComponent},
@@ -31,7 +32,7 @@ const routes: Routes = [
 
   { path: 'notfound', component: NotFoundComponent },   
   { path: '**', redirectTo: '/notfound' } 
-  
+
 ];
 
 @NgModule({
