@@ -3,7 +3,7 @@
 }
 
 .container {
-  @apply flex justify-center items-center w-full;
+  @apply flex justify-center items-center w-full flex-col;
 }
 
 .table {
