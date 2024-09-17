@@ -12,6 +12,7 @@ import { SectionsComponent } from './components/sections/sections.component';
 import { DoctorListComponent } from './components/doctor-list/doctor-list.component';
 import { ReserveComponent } from './components/reserve/reserve.component';
 import { FainalizeReservationComponent } from './components/fainalize-reservation/fainalize-reservation.component';
+import { NotFoundComponent } from '../shared/components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,8 @@ const routes: Routes = [
       { path: 'doctors-list/:id', pathMatch: "full", component: DoctorListComponent },
       { path: 'reserve/:providerId', pathMatch: "full", component: ReserveComponent },
       { path: 'finalize-reservation/:turnId', pathMatch: "full", component: FainalizeReservationComponent },
+      { path: 'notfound', component: NotFoundComponent },   
+      { path: '**', redirectTo: '/notfound' } 
 
     ],
   },

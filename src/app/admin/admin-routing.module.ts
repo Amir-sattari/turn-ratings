@@ -9,12 +9,10 @@ import { AddReceptionComponent } from './components/add-reception/add-reception.
 import { EditProviderComponent } from './components/edit-provider/edit-provider.component';
 import { EditReceptionComponent } from './components/edit-reception/edit-reception.component';
 import { ReferralsComponent } from './components/referrals/referrals.component';
+import { NotFoundComponent } from '../shared/components/not-found/not-found.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: AdminContainerComponent,
-    children: [
+  { path: '', component: AdminContainerComponent, children: [
 
       {path: 'home', component: HomeAdminComponent},
 
@@ -29,11 +27,11 @@ const routes: Routes = [
 
       {path: 'referrals', component: ReferralsComponent},
 
+    ],},
 
-
-            
-    ],
-  },
+  { path: 'notfound', component: NotFoundComponent },   
+  { path: '**', redirectTo: '/notfound' } 
+  
 ];
 
 @NgModule({

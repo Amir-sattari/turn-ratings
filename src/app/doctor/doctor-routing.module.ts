@@ -31,13 +31,14 @@ const routes: Routes = [
       { path: 'search-patient', pathMatch: "full", component: SearchPatientComponent },
       { path: 'header', pathMatch: "full", component: TableHeaderComponent },
       { path: 'referrals', pathMatch: "full", component: PatientReferralsComponent },
-      { path: 'not-found', pathMatch: "full", component: NotFoundComponent },
       { path: 'patients', pathMatch: "full", component: PatientsComponent },
       { path: 'create-turn', pathMatch: "full", component: CreateTurnComponent },
       { path: 'turn-price', pathMatch: "full", component: TurnPriceComponent },
       { path: 'set-turns', pathMatch: "full", component: SetTurnsComponent },
       { path: 'working-time-doctor', pathMatch: "full", component: WorkingTimeDoctorComponent },
       { path: 'set-working-time-doctor', pathMatch: "full", component: SetWorkingTimeDoctorComponent },
+      { path: 'notfound', component: NotFoundComponent },   
+      { path: '**', redirectTo: '/notfound' } 
 
       
     ],
